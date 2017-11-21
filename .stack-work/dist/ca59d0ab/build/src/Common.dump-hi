@@ -1,0 +1,954 @@
+
+==================== FINAL INTERFACE ====================
+2017-11-21 17:03:14.619469 UTC
+
+interface calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Common 8002
+  interface hash: bf46d4bb3e3216e7a66efe50bde00aa4
+  ABI hash: 6e5679e33055a79cde65cf7d1c45b0e4
+  export-list hash: ffb5b4afd4db5415965f9f33be01d11b
+  orphan hash: 864dff80c1a8d4e0e0c50cb1d7e7547f
+  flag hash: dc252629160a211b4eef177e4c1f5a39
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Common.consts
+  Common.Env
+  Common.Expr{Common.AddExpr Common.ConstExpr Common.DivideExpr Common.MultiplyExpr Common.NumExpr Common.SubtractExpr Common.VarExpr}
+  Common.Line{Common.Expr Common.Stmt}
+  Common.Stmt{Common.SeqStmt Common.SetStmt}
+  Common.Val{Common.ExnVal Common.NumVal}
+module dependencies:
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      hashable-1.2.6.1@hashable-1.2.6.1-2ZLNuHq395GGIHwEHuqZol
+                      integer-gmp-1.0.0.1
+                      text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00
+                      unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC*
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hashable-1.2.6.1@hashable-1.2.6.1-2ZLNuHq395GGIHwEHuqZol:Data.Hashable.Generic
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Show
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Compose base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.Functor.Product base-4.9.1.0:Data.Functor.Sum
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+                         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy
+                         unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Base
+import  -/  base-4.9.1.0:GHC.Base 4caea1123ecf4b46e27cbccd6d279377
+import  -/  base-4.9.1.0:GHC.Float b620368aab866c2bb9d3a0a459566b84
+import  -/  base-4.9.1.0:GHC.Show eca5834daba3b6a2bbbe64ab52056707
+import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Base bc82d1baec8d9b794d947a6de22d7684
+import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Strict d885b1d9a1e033a14f7012d569830271
+71245a46e89dff0f8356c3ed746ae9e2
+  $fEqVal :: GHC.Classes.Eq Common.Val
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Common.Val Common.$fEqVal_$c== Common.$fEqVal_$c/= -}
+71245a46e89dff0f8356c3ed746ae9e2
+  $fEqVal_$c/= :: Common.Val -> Common.Val -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Common.Val) (b :: Common.Val) ->
+                 case a of wild {
+                   Common.NumVal a1
+                   -> case b of wild1 {
+                        Common.NumVal b1
+                        -> case a1 of wild2 { GHC.Types.F# x ->
+                           case b1 of wild3 { GHC.Types.F# y ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.eqFloat# x y) of wild4 {
+                             GHC.Types.False -> GHC.Types.True
+                             GHC.Types.True -> GHC.Types.False } } }
+                        Common.ExnVal ipv -> GHC.Types.True }
+                   Common.ExnVal a1
+                   -> case b of wild1 {
+                        Common.NumVal ipv -> GHC.Types.True
+                        Common.ExnVal b1
+                        -> case GHC.Base.eqString a1 b1 of wild2 {
+                             GHC.Types.False -> GHC.Types.True
+                             GHC.Types.True -> GHC.Types.False } } }) -}
+71245a46e89dff0f8356c3ed746ae9e2
+  $fEqVal_$c== :: Common.Val -> Common.Val -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: Common.Val) (ds1 :: Common.Val) ->
+                 case ds of wild {
+                   Common.NumVal a1
+                   -> case ds1 of wild1 {
+                        Common.NumVal b1 -> GHC.Classes.eqFloat a1 b1
+                        Common.ExnVal ipv -> GHC.Types.False }
+                   Common.ExnVal a1
+                   -> case ds1 of wild1 {
+                        Common.NumVal ipv -> GHC.Types.False
+                        Common.ExnVal b1 -> GHC.Base.eqString a1 b1 } }) -}
+ac4affb1772fca4000aab1ef97c37365
+  $fShowExpr :: GHC.Show.Show Common.Expr
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Common.Expr
+                  Common.$fShowExpr_$cshowsPrec
+                  Common.$fShowExpr_$cshow
+                  Common.$fShowExpr_$cshowList -}
+ac4affb1772fca4000aab1ef97c37365
+  $fShowExpr1 :: Common.Expr -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Common.Expr) -> Common.$w$cshowsPrec 0# w) -}
+ac4affb1772fca4000aab1ef97c37365
+  $fShowExpr_$cshow :: Common.Expr -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Common.Expr) ->
+                 Common.$fShowExpr_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+ac4affb1772fca4000aab1ef97c37365
+  $fShowExpr_$cshowList :: [Common.Expr] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Common.Expr
+                   Common.$fShowExpr1) -}
+ac4affb1772fca4000aab1ef97c37365
+  $fShowExpr_$cshowsPrec ::
+    GHC.Types.Int -> Common.Expr -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Common.Expr) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Common.$w$cshowsPrec ww1 w1 }) -}
+5329ef54c7bebad3e3611f194a85724f
+  $fShowLine :: GHC.Show.Show Common.Line
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Common.Line
+                  Common.$fShowLine_$cshowsPrec
+                  Common.$fShowLine_$cshow
+                  Common.$fShowLine_$cshowList -}
+5329ef54c7bebad3e3611f194a85724f
+  $fShowLine1 :: Common.Line -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Common.Line) -> Common.$w$cshowsPrec1 0# w) -}
+d17f70194d03c956e8969a88e70425f3
+  $fShowLine2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Expr "#) -}
+b8bdaea419c149bcacfe20e615d2f1a7
+  $fShowLine3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Stmt "#) -}
+7639a2314403c51b20d8aa4e43e17217
+  $fShowLine4 :: Common.Stmt -> GHC.Show.ShowS
+  {- Arity: 1 -}
+87216981d7605c88913199a2832c45ce
+  $fShowLine5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "SeqStmt "#) -}
+37f94df1e61bc7a17b0bba6affb555c4
+  $fShowLine6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "SetStmt "#) -}
+6399a3f85606deff9066ca709c19ed8c
+  $fShowLine7 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows4
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+5329ef54c7bebad3e3611f194a85724f
+  $fShowLine_$cshow :: Common.Line -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (x :: Common.Line) ->
+                 case x of wild {
+                   Common.Stmt b1
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Common.$fShowLine3
+                        (case b1 of wild1 {
+                           Common.SetStmt b2 b3
+                           -> GHC.Types.:
+                                @ GHC.Types.Char
+                                GHC.Show.shows7
+                                (GHC.Base.++
+                                   @ GHC.Types.Char
+                                   Common.$fShowLine6
+                                   (GHC.Types.:
+                                      @ GHC.Types.Char
+                                      GHC.Show.shows6
+                                      (GHC.Show.showLitString
+                                         b2
+                                         (GHC.Types.:
+                                            @ GHC.Types.Char
+                                            GHC.Show.shows6
+                                            (GHC.Types.:
+                                               @ GHC.Types.Char
+                                               GHC.Show.showSpace1
+                                               (Common.$w$cshowsPrec 11# b3 Common.$fShowLine7))))))
+                           Common.SeqStmt b2
+                           -> GHC.Types.:
+                                @ GHC.Types.Char
+                                GHC.Show.shows7
+                                (GHC.Base.++
+                                   @ GHC.Types.Char
+                                   Common.$fShowLine5
+                                   (GHC.Show.showList__
+                                      @ Common.Stmt
+                                      Common.$fShowLine4
+                                      b2
+                                      Common.$fShowLine7)) })
+                   Common.Expr b1
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Common.$fShowLine2
+                        (Common.$w$cshowsPrec 11# b1 (GHC.Types.[] @ GHC.Types.Char)) }) -}
+5329ef54c7bebad3e3611f194a85724f
+  $fShowLine_$cshowList :: [Common.Line] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Common.Line
+                   Common.$fShowLine1) -}
+5329ef54c7bebad3e3611f194a85724f
+  $fShowLine_$cshowsPrec ::
+    GHC.Types.Int -> Common.Line -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Common.Line) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Common.$w$cshowsPrec1 ww1 w1 }) -}
+7639a2314403c51b20d8aa4e43e17217
+  $fShowStmt :: GHC.Show.Show Common.Stmt
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Common.Stmt
+                  Common.$fShowStmt_$cshowsPrec
+                  Common.$fShowStmt_$cshow
+                  Common.$fShowStmt_$cshowList -}
+7639a2314403c51b20d8aa4e43e17217
+  $fShowStmt_$cshow :: Common.Stmt -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (x :: Common.Stmt) ->
+                 case x of wild {
+                   Common.SetStmt b1 b2
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Common.$fShowLine6
+                        (GHC.Types.:
+                           @ GHC.Types.Char
+                           GHC.Show.shows6
+                           (GHC.Show.showLitString
+                              b1
+                              (GHC.Types.:
+                                 @ GHC.Types.Char
+                                 GHC.Show.shows6
+                                 (GHC.Types.:
+                                    @ GHC.Types.Char
+                                    GHC.Show.showSpace1
+                                    (Common.$w$cshowsPrec
+                                       11#
+                                       b2
+                                       (GHC.Types.[] @ GHC.Types.Char))))))
+                   Common.SeqStmt b1
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Common.$fShowLine5
+                        (GHC.Show.showList__
+                           @ Common.Stmt
+                           Common.$fShowLine4
+                           b1
+                           (GHC.Types.[] @ GHC.Types.Char)) }) -}
+7639a2314403c51b20d8aa4e43e17217
+  $fShowStmt_$cshowList :: [Common.Stmt] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Common.Stmt
+                   Common.$fShowLine4) -}
+7639a2314403c51b20d8aa4e43e17217
+  $fShowStmt_$cshowsPrec ::
+    GHC.Types.Int -> Common.Stmt -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Common.Stmt) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Common.$w$cshowsPrec2 ww1 w1 }) -}
+71245a46e89dff0f8356c3ed746ae9e2
+  $fShowVal :: GHC.Show.Show Common.Val
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Common.Val
+                  Common.$fShowVal_$cshowsPrec
+                  Common.$fShowVal_$cshow
+                  Common.$fShowVal_$cshowList -}
+71245a46e89dff0f8356c3ed746ae9e2
+  $fShowVal1 :: Common.Val -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Common.Val) -> Common.$w$cshowsPrec3 0# w) -}
+d770ed57f3de27971ffde7d43c82d484
+  $fShowVal2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ExnVal "#) -}
+eec6a45089bfa7854e1a3db75ae43f15
+  $fShowVal3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "NumVal "#) -}
+cf098deab65a559ccfe98253eb55f421
+  $fShowVal4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+c0dc0f0092ff8f13eb729ca3f97b19b5
+  $fShowVal5 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows6
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+71245a46e89dff0f8356c3ed746ae9e2
+  $fShowVal_$cshow :: Common.Val -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (x :: Common.Val) ->
+                 case x of wild {
+                   Common.NumVal b1
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Common.$fShowVal3
+                        (case b1 of ww { GHC.Types.F# ww1 ->
+                         GHC.Float.$w$sshowSignedFloat1
+                           GHC.Float.$fShowFloat_$sshowFloat
+                           Common.$fShowVal4
+                           ww1
+                           (GHC.Types.[] @ GHC.Types.Char) })
+                   Common.ExnVal b1
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Common.$fShowVal2
+                        (GHC.Types.:
+                           @ GHC.Types.Char
+                           GHC.Show.shows6
+                           (GHC.Show.showLitString b1 Common.$fShowVal5)) }) -}
+71245a46e89dff0f8356c3ed746ae9e2
+  $fShowVal_$cshowList :: [Common.Val] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__ @ Common.Val Common.$fShowVal1) -}
+71245a46e89dff0f8356c3ed746ae9e2
+  $fShowVal_$cshowsPrec ::
+    GHC.Types.Int -> Common.Val -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Common.Val) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Common.$w$cshowsPrec3 ww1 w1 }) -}
+fcd8fd3c0c328d2436bb7cc7fde827f3
+  $s$wupdateOrSnocWithKey ::
+    ([GHC.Types.Char] -> v -> v -> v)
+    -> [GHC.Types.Char]
+    -> v
+    -> GHC.Prim.Array# (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+    -> GHC.Prim.Array# (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+  {- Arity: 4, Strictness: <L,C(C1(C1(U)))><S,1*U><L,U><S,U>,
+     Inline: [0],
+     Unfolding: (\ @ v
+                   (w1 :: [GHC.Types.Char] -> v -> v -> v)
+                   (w2 :: [GHC.Types.Char])
+                   (w3 :: v)
+                   (ww :: GHC.Prim.Array#
+                            (Data.HashMap.Base.Leaf [GHC.Types.Char] v)) ->
+                 letrec {
+                   $wgo1 :: [GHC.Types.Char]
+                            -> v
+                            -> GHC.Prim.Array# (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+                            -> GHC.Prim.Int#
+                            -> GHC.Prim.Int#
+                            -> GHC.Prim.Array# (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+                     {- Arity: 5, Strictness: <S,1*U><L,U><S,U><S,U><S,U>,
+                        Inline: [0] -}
+                   = \ (w :: [GHC.Types.Char])
+                       (w4 :: v)
+                       (ww1 :: GHC.Prim.Array#
+                                 (Data.HashMap.Base.Leaf [GHC.Types.Char] v))
+                       (ww2 :: GHC.Prim.Int#)
+                       (ww3 :: GHC.Prim.Int#) ->
+                     case w of k2 { DEFAULT ->
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.>=# ww2 ww3) of wild {
+                       GHC.Types.False
+                       -> case GHC.Prim.indexArray#
+                                 @ (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+                                 ww1
+                                 ww2 of ds { Unit# ipv3 ->
+                          case ipv3 of wild1 { Data.HashMap.Base.L kx y ->
+                          case GHC.Base.eqString k2 kx of wild2 {
+                            GHC.Types.False -> $wgo1 k2 w4 ww1 (GHC.Prim.+# ww2 1#) ww3
+                            GHC.Types.True
+                            -> case GHC.Prim.thawArray#
+                                      @ (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+                                      @ GHC.Prim.RealWorld
+                                      ww1
+                                      0#
+                                      (GHC.Prim.sizeofArray#
+                                         @ (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+                                         ww1)
+                                      GHC.Prim.realWorld# of ds1 { (#,#) ipv4 ipv5 ->
+                               case GHC.Prim.writeArray#
+                                      @ GHC.Prim.RealWorld
+                                      @ (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+                                      ipv5
+                                      ww2
+                                      (Data.HashMap.Base.L @ [GHC.Types.Char] @ v k2 (w1 k2 w4 y))
+                                      ipv4 of s' { DEFAULT ->
+                               case GHC.Prim.unsafeFreezeArray#
+                                      @ GHC.Prim.RealWorld
+                                      @ (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+                                      ipv5
+                                      s' of ds2 { (#,#) ipv6 ipv7 ->
+                               ipv7 } } } } } }
+                       GHC.Types.True
+                       -> case GHC.Prim.newArray#
+                                 @ (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+                                 @ GHC.Prim.RealWorld
+                                 (GHC.Prim.+# ww3 1#)
+                                 (Data.HashMap.Array.undefinedElem
+                                    @ (Data.HashMap.Base.Leaf [GHC.Types.Char] v))
+                                 GHC.Prim.realWorld# of ds { (#,#) ipv3 ipv4 ->
+                          case GHC.Prim.copyArray#
+                                 @ (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+                                 @ GHC.Prim.RealWorld
+                                 ww1
+                                 0#
+                                 ipv4
+                                 0#
+                                 ww3
+                                 ipv3 of s2 { DEFAULT ->
+                          case GHC.Prim.writeArray#
+                                 @ GHC.Prim.RealWorld
+                                 @ (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+                                 ipv4
+                                 ww3
+                                 (Data.HashMap.Base.L @ [GHC.Types.Char] @ v k2 w4)
+                                 s2 of s' { DEFAULT ->
+                          case GHC.Prim.unsafeFreezeArray#
+                                 @ GHC.Prim.RealWorld
+                                 @ (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+                                 ipv4
+                                 s' of ds1 { (#,#) ipv5 ipv6 ->
+                          ipv6 } } } } } }
+                 } in
+                 $wgo1
+                   w2
+                   w3
+                   ww
+                   0#
+                   (GHC.Prim.sizeofArray#
+                      @ (Data.HashMap.Base.Leaf [GHC.Types.Char] v)
+                      ww)) -}
+8ac111dc0145be247ac9ebe1de445bd5
+  $sunsafeInsert ::
+    [GHC.Types.Char]
+    -> v
+    -> Data.HashMap.Base.HashMap [GHC.Types.Char] v
+    -> Data.HashMap.Base.HashMap [GHC.Types.Char] v
+  {- Arity: 3, Strictness: <S,U><L,U><S,1*U>,
+     Unfolding: (\ @ v
+                   (k0 :: [GHC.Types.Char])
+                   (v0 :: v)
+                   (m0 :: Data.HashMap.Base.HashMap [GHC.Types.Char] v) ->
+                 case Data.Hashable.Class.$w$cliftHashWithSalt
+                        @ GHC.Types.Char
+                        Data.Hashable.Class.$fHashableChar_$chashWithSalt
+                        -2578643520546668380#
+                        k0 of ww { DEFAULT ->
+                 case Common.$wpoly_go1
+                        @ GHC.Prim.RealWorld
+                        @ v
+                        (GHC.Prim.int2Word# ww)
+                        k0
+                        v0
+                        0#
+                        m0
+                        GHC.Prim.realWorld# of ds { (#,#) ipv ipv1 ->
+                 ipv1 } }) -}
+86f1b6cd77a63e97ffb635213e50904b
+  $tc'AddExpr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15871271138327373806##
+                   13491036847545458748##
+                   Common.$trModule
+                   Common.$tc'AddExpr1) -}
+28ec500272959269f123f700b3e7d9a3
+  $tc'AddExpr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'AddExpr"#) -}
+e7788ac55ba38913f5797bf26864d73e
+  $tc'ConstExpr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16917273658573013089##
+                   9171350756132213906##
+                   Common.$trModule
+                   Common.$tc'ConstExpr1) -}
+715b783fa9870f16241cd1ac3c10df6b
+  $tc'ConstExpr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'ConstExpr"#) -}
+5ceb409b7d9569b62c90ad67aac0c410
+  $tc'DivideExpr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   18432300084913147007##
+                   2743414601362654831##
+                   Common.$trModule
+                   Common.$tc'DivideExpr1) -}
+7da28b4638bc4542d2caef922ee024ca
+  $tc'DivideExpr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'DivideExpr"#) -}
+8475ee1aa6787970b461e58f5d250489
+  $tc'ExnVal :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8957764832296163573##
+                   10176928909423495977##
+                   Common.$trModule
+                   Common.$tc'ExnVal1) -}
+d1b80f969c7b603b959b076f824f904c
+  $tc'ExnVal1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'ExnVal"#) -}
+c6a36d65ccd5b699c8880a37258a471b
+  $tc'Expr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1275887511805563489##
+                   15131631218863746753##
+                   Common.$trModule
+                   Common.$tc'Expr1) -}
+bbca9acdf631c6f3e4f1faba5204a3dd
+  $tc'Expr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Expr"#) -}
+a2b68775d33ea60a598020af95cda81c
+  $tc'MultiplyExpr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9283338180336726493##
+                   14980483511956896854##
+                   Common.$trModule
+                   Common.$tc'MultiplyExpr1) -}
+22727ebbfa07ea9bf66be84ceb3ed3f5
+  $tc'MultiplyExpr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'MultiplyExpr"#) -}
+86fdac6e5fde44c52cff0512e316f01f
+  $tc'NumExpr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7922519747684671399##
+                   9753051484823080749##
+                   Common.$trModule
+                   Common.$tc'NumExpr1) -}
+2b2eee2b8b004888841b4e18cd95b95e
+  $tc'NumExpr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'NumExpr"#) -}
+32702aca51f1718b0a3bf92f72b50a30
+  $tc'NumVal :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9810360802942019995##
+                   3884402139055000428##
+                   Common.$trModule
+                   Common.$tc'NumVal1) -}
+98ed7aa4553f5badec3fc77604625efa
+  $tc'NumVal1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'NumVal"#) -}
+8b66b51cd8170d44e7fb5aaf55cabec9
+  $tc'SeqStmt :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9740822285969093925##
+                   2761565574664616781##
+                   Common.$trModule
+                   Common.$tc'SeqStmt1) -}
+d0e5a86bfccff436255bbb58c1e48afd
+  $tc'SeqStmt1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'SeqStmt"#) -}
+fab8dca5102fd32bbef458e35723e7fe
+  $tc'SetStmt :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8159472142070238608##
+                   10350134399238662268##
+                   Common.$trModule
+                   Common.$tc'SetStmt1) -}
+07ebad4f365b0046e9d5f1a3d5681445
+  $tc'SetStmt1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'SetStmt"#) -}
+f6b336d34ea413568ee772b2bbe83266
+  $tc'Stmt :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2639191433906365765##
+                   957877836767124696##
+                   Common.$trModule
+                   Common.$tc'Stmt1) -}
+f476975aad57a413d22d9220cfcfd427
+  $tc'Stmt1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Stmt"#) -}
+43878570dcdc785141db232de85779ed
+  $tc'SubtractExpr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14694202627158639745##
+                   17568158265826390101##
+                   Common.$trModule
+                   Common.$tc'SubtractExpr1) -}
+53c6cc26c3a59772601c0798f8d2aac9
+  $tc'SubtractExpr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'SubtractExpr"#) -}
+b82bc453379e58a91b2c36ba94ca486a
+  $tc'VarExpr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8841086489709054005##
+                   14270623158150279410##
+                   Common.$trModule
+                   Common.$tc'VarExpr1) -}
+d5054bbfa0ac3a500b6d9a53da635147
+  $tc'VarExpr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'VarExpr"#) -}
+de5dc6a7426068bef453ca3e06a703f1
+  $tcExpr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3906297581391596239##
+                   7552392327056302997##
+                   Common.$trModule
+                   Common.$tcExpr1) -}
+cf27bf4a0a5cd1742d6e7e3f323c1a38
+  $tcExpr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Expr"#) -}
+df700faf91e86432255d43822d071798
+  $tcLine :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4759787976724619821##
+                   9473465180738554295##
+                   Common.$trModule
+                   Common.$tcLine1) -}
+2f88fd99e01c4ac00f0c919ea0f10711
+  $tcLine1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Line"#) -}
+ad6a4e0577c4b79f11d69eb0c4ee99dd
+  $tcStmt :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12063066873923603170##
+                   15017368109650750624##
+                   Common.$trModule
+                   Common.$tcStmt1) -}
+87e79b95442cb82547387aa7e4e7e714
+  $tcStmt1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Stmt"#) -}
+cbaee88ac6940db60c9c47536e4acd6f
+  $tcVal :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   304708406393802923##
+                   12176854215502713585##
+                   Common.$trModule
+                   Common.$tcVal1) -}
+277ba414e77c681b5c886fa9c340fce6
+  $tcVal1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Val"#) -}
+5f1ce4e0d5e91cf3684486633d319a47
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Common.$trModule2
+                   Common.$trModule1) -}
+d7e00f4b1baf38bb499397c9642a1695
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Common"#) -}
+4b8d371816a1fe36801853068b9832e4
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g"#) -}
+ac4affb1772fca4000aab1ef97c37365
+  $w$cshowsPrec :: GHC.Prim.Int# -> Common.Expr -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0] -}
+5329ef54c7bebad3e3611f194a85724f
+  $w$cshowsPrec1 :: GHC.Prim.Int# -> Common.Line -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#) (w :: Common.Line) ->
+                 case w of wild {
+                   Common.Stmt b1
+                   -> let {
+                        g :: GHC.Base.String -> GHC.Base.String
+                        = Common.$w$cshowsPrec2 11# b1
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# ww 11#) of wild1 {
+                        GHC.Types.False
+                        -> \ (x :: GHC.Base.String) ->
+                           GHC.Base.++ @ GHC.Types.Char Common.$fShowLine3 (g x)
+                        GHC.Types.True
+                        -> \ (x :: GHC.Base.String) ->
+                           GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Common.$fShowLine3
+                                (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x))) }
+                   Common.Expr b1
+                   -> let {
+                        g :: GHC.Base.String -> GHC.Base.String
+                        = Common.$w$cshowsPrec 11# b1
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# ww 11#) of wild1 {
+                        GHC.Types.False
+                        -> \ (x :: GHC.Base.String) ->
+                           GHC.Base.++ @ GHC.Types.Char Common.$fShowLine2 (g x)
+                        GHC.Types.True
+                        -> \ (x :: GHC.Base.String) ->
+                           GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Common.$fShowLine2
+                                (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x))) } }) -}
+7639a2314403c51b20d8aa4e43e17217
+  $w$cshowsPrec2 :: GHC.Prim.Int# -> Common.Stmt -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#) (w :: Common.Stmt) ->
+                 case w of wild {
+                   Common.SetStmt b1 b2
+                   -> let {
+                        g :: GHC.Base.String -> GHC.Base.String
+                        = Common.$w$cshowsPrec 11# b2
+                      } in
+                      let {
+                        p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,U> -}
+                        = \ (x :: GHC.Base.String) ->
+                          GHC.Base.++
+                            @ GHC.Types.Char
+                            Common.$fShowLine6
+                            (GHC.Types.:
+                               @ GHC.Types.Char
+                               GHC.Show.shows6
+                               (GHC.Show.showLitString
+                                  b1
+                                  (GHC.Types.:
+                                     @ GHC.Types.Char
+                                     GHC.Show.shows6
+                                     (GHC.Types.: @ GHC.Types.Char GHC.Show.showSpace1 (g x)))))
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# ww 11#) of wild1 {
+                        GHC.Types.False -> p
+                        GHC.Types.True
+                        -> \ (x :: GHC.Base.String) ->
+                           GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x)) }
+                   Common.SeqStmt b1
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# ww 11#) of wild1 {
+                        GHC.Types.False
+                        -> \ (x :: GHC.Base.String) ->
+                           GHC.Base.++
+                             @ GHC.Types.Char
+                             Common.$fShowLine5
+                             (GHC.Show.showList__ @ Common.Stmt Common.$fShowLine4 b1 x)
+                        GHC.Types.True
+                        -> \ (x :: GHC.Base.String) ->
+                           GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Common.$fShowLine5
+                                (GHC.Show.showList__
+                                   @ Common.Stmt
+                                   Common.$fShowLine4
+                                   b1
+                                   (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x))) } }) -}
+71245a46e89dff0f8356c3ed746ae9e2
+  $w$cshowsPrec3 :: GHC.Prim.Int# -> Common.Val -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#) (w :: Common.Val) ->
+                 case w of wild {
+                   Common.NumVal b1
+                   -> let {
+                        g :: GHC.Base.String -> GHC.Base.String
+                        = case b1 of ww1 { GHC.Types.F# ww2 ->
+                          GHC.Float.$w$sshowSignedFloat1
+                            GHC.Float.$fShowFloat_$sshowFloat
+                            Common.$fShowVal4
+                            ww2 }
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# ww 11#) of wild1 {
+                        GHC.Types.False
+                        -> \ (x :: GHC.Base.String) ->
+                           GHC.Base.++ @ GHC.Types.Char Common.$fShowVal3 (g x)
+                        GHC.Types.True
+                        -> \ (x :: GHC.Base.String) ->
+                           GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Common.$fShowVal3
+                                (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x))) }
+                   Common.ExnVal b1
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# ww 11#) of wild1 {
+                        GHC.Types.False
+                        -> \ (x :: GHC.Base.String) ->
+                           GHC.Base.++
+                             @ GHC.Types.Char
+                             Common.$fShowVal2
+                             (GHC.Types.:
+                                @ GHC.Types.Char
+                                GHC.Show.shows6
+                                (GHC.Show.showLitString
+                                   b1
+                                   (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 x)))
+                        GHC.Types.True
+                        -> \ (x :: GHC.Base.String) ->
+                           GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Common.$fShowVal2
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows6
+                                   (GHC.Show.showLitString
+                                      b1
+                                      (GHC.Types.:
+                                         @ GHC.Types.Char
+                                         GHC.Show.shows6
+                                         (GHC.Types.:
+                                            @ GHC.Types.Char
+                                            GHC.Show.shows4
+                                            x))))) } }) -}
+6856c64be2adc0c46fee13a6360d3827
+  $wpoly_go1 ::
+    GHC.Prim.Word#
+    -> [GHC.Types.Char]
+    -> v
+    -> GHC.Prim.Int#
+    -> Data.HashMap.Base.HashMap [GHC.Types.Char] v
+    -> GHC.Prim.State# s
+    -> (# GHC.Prim.State# s,
+          Data.HashMap.Base.HashMap [GHC.Types.Char] v #)
+  {- Arity: 6, Strictness: <L,U><S,1*U><L,U><L,U><S,1*U><S,U>,
+     Inline: [0] -}
+7e10e4368c6e880d5cf4d8216a27a1f4
+  type Env = Data.HashMap.Base.HashMap GHC.Base.String Common.Val
+ac4affb1772fca4000aab1ef97c37365
+  data Expr
+    = NumExpr GHC.Types.Float
+    | ConstExpr GHC.Base.String
+    | VarExpr GHC.Base.String
+    | AddExpr Common.Expr Common.Expr
+    | SubtractExpr Common.Expr Common.Expr
+    | MultiplyExpr Common.Expr Common.Expr
+    | DivideExpr Common.Expr Common.Expr
+5329ef54c7bebad3e3611f194a85724f
+  data Line = Stmt Common.Stmt | Expr Common.Expr
+7639a2314403c51b20d8aa4e43e17217
+  data Stmt
+    = SetStmt GHC.Base.String Common.Expr | SeqStmt [Common.Stmt]
+71245a46e89dff0f8356c3ed746ae9e2
+  data Val = NumVal GHC.Types.Float | ExnVal GHC.Base.String
+3832aa53649195f24011b82a11ef9ea7
+  consts :: Data.HashMap.Base.HashMap GHC.Base.String GHC.Types.Float
+  {- Unfolding: (case Common.$sunsafeInsert
+                        @ GHC.Types.Float
+                        Common.consts3
+                        GHC.Float.$fFloatingFloat_$cpi
+                        (Data.HashMap.Base.Empty
+                           @ [GHC.Types.Char]
+                           @ GHC.Types.Float) of z { DEFAULT ->
+                 Common.$sunsafeInsert
+                   @ GHC.Types.Float
+                   Common.consts2
+                   Common.consts1
+                   z }) -}
+d215560f0a2e866bf902ce14cc9ad71f
+  consts1 :: GHC.Types.Float
+  {- Unfolding: (GHC.Types.F# (GHC.Prim.expFloat# 1.0#)) -}
+701dedc1fd32c8afbed79f0899411eae
+  consts2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "e"#) -}
+7bd33ebf15e31bd12de4b5e8df83be70
+  consts3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "pi"#) -}
+instance [safe] GHC.Classes.Eq [Common.Val] = Common.$fEqVal
+instance [safe] GHC.Show.Show [Common.Expr] = Common.$fShowExpr
+instance [safe] GHC.Show.Show [Common.Line] = Common.$fShowLine
+instance [safe] GHC.Show.Show [Common.Stmt] = Common.$fShowStmt
+instance [safe] GHC.Show.Show [Common.Val] = Common.$fShowVal
+"SPEC/Common $wupdateOrSnocWithKey @ [Char] _" [0] forall @ v
+                                                          (w :: GHC.Classes.Eq [GHC.Types.Char])
+  Data.HashMap.Base.$wupdateOrSnocWithKey @ [GHC.Types.Char] @ v w
+  = Common.$s$wupdateOrSnocWithKey @ v
+"SPEC/Common unsafeInsert @ [Char] _" [ALWAYS] forall @ v
+                                                      ($dHashable :: Data.Hashable.Class.Hashable
+                                                                       [GHC.Types.Char])
+                                                      ($dEq :: GHC.Classes.Eq [GHC.Types.Char])
+  Data.HashMap.Base.unsafeInsert @ [GHC.Types.Char]
+                                 @ v
+                                 $dEq
+                                 $dHashable
+  = Common.$sunsafeInsert @ v
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

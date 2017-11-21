@@ -1,0 +1,203 @@
+
+==================== FINAL INTERFACE ====================
+2017-11-21 17:03:16.9286236 UTC
+
+interface calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Lib 8002
+  interface hash: 49adfa7b42c11c76e4330b3cb1df059d
+  ABI hash: a43e24c33fde54a130eabe5bfbc88321
+  export-list hash: 208cd35a9d931e3b59d67bd77ef4cbf3
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: dc252629160a211b4eef177e4c1f5a39
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Common.consts
+  Lib.eval
+  Lib.exec
+  Lib.run
+  Lib.runLine
+  Parser.p_line
+  Parser.runParser
+  Common.Env
+  Common.Expr{Common.AddExpr Common.ConstExpr Common.DivideExpr Common.MultiplyExpr Common.NumExpr Common.SubtractExpr Common.VarExpr}
+  Common.Line{Common.Expr Common.Stmt}
+  Common.Stmt{Common.SeqStmt Common.SetStmt}
+  Common.Val{Common.ExnVal Common.NumVal}
+module dependencies: Common Parser
+package dependencies: QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu
+                      Win32-2.3.1.1@Win32-2.3.1.1 array-0.5.1.1@array-0.5.1.1
+                      base-4.9.1.0 binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      exceptions-0.8.3@exceptions-0.8.3-ADEDRATtUrMK1JW4zMQ9U
+                      ghc-boot-th-8.0.2@ghc-boot-th-8.0.2 ghc-prim-0.5.0.0
+                      hashable-1.2.6.1@hashable-1.2.6.1-2ZLNuHq395GGIHwEHuqZol
+                      integer-gmp-1.0.0.1
+                      integer-logarithms-1.0.2@integer-logarithms-1.0.2-92lMiWV9mmYAwfMEYgfQ0D
+                      megaparsec-5.3.1@megaparsec-5.3.1-EvtC1a4ozvRI8nz4BqBxmx
+                      mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh
+                      random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      scientific-0.3.5.2@scientific-0.3.5.2-FM2NdrNTcdbCDq9wuNnhIA
+                      stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve
+                      template-haskell-2.11.1.0
+                      text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00
+                      tf-random-0.5@tf-random-0.5-CJZw1ZWS5MOJlR60HqKEZL
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hashable-1.2.6.1@hashable-1.2.6.1-2ZLNuHq395GGIHwEHuqZol:Data.Hashable.Generic
+         stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve:Control.Monad.STM
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Show
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Compose base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.Functor.Product base-4.9.1.0:Data.Functor.Sum
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         ghc-boot-th-8.0.2@ghc-boot-th-8.0.2:GHC.LanguageExtensions.Type
+                         megaparsec-5.3.1@megaparsec-5.3.1-EvtC1a4ozvRI8nz4BqBxmx:Text.Megaparsec.Error
+                         megaparsec-5.3.1@megaparsec-5.3.1-EvtC1a4ozvRI8nz4BqBxmx:Text.Megaparsec.Pos
+                         megaparsec-5.3.1@megaparsec-5.3.1-EvtC1a4ozvRI8nz4BqBxmx:Text.Megaparsec.Prim
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Control.Monad.Primitive
+                         primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Data.Primitive.Array
+                         template-haskell-2.11.1.0:Language.Haskell.TH.Syntax
+                         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+                         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy
+                         unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Base
+import  -/  base-4.9.1.0:Data.Either 186ef9adf6b47e24f39efe9b2e18e352
+import  -/  base-4.9.1.0:GHC.Base 4caea1123ecf4b46e27cbccd6d279377
+import  -/  base-4.9.1.0:GHC.Err 20faef8829fd13c027d0ee2213637534
+import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
+import  -/  Common 6e5679e33055a79cde65cf7d1c45b0e4
+  exports: ffb5b4afd4db5415965f9f33be01d11b
+  AddExpr 345339e90c62b19dccd13bc18fe34fde
+  ConstExpr 46b0882fef71d232fc12e05c2ec12673
+  DivideExpr a672ad8bdccb309a6083d9bd28cf2255
+  Env 7e10e4368c6e880d5cf4d8216a27a1f4
+  ExnVal 1679323214c627338397de7fc4ceba3f
+  Expr cbaf7fda286cd63dd651c77d856a5ded
+  Expr ac4affb1772fca4000aab1ef97c37365
+  Line 5329ef54c7bebad3e3611f194a85724f
+  MultiplyExpr c155bcb97dc609cb10e5b3b637896040
+  NumExpr 07d473a175b83ebb9ccd29858e346351
+  NumVal 837c8ff0096ba5f5fb7b6333ce1a248f
+  SeqStmt 4ccaba0e3a561ef359e39fc55154deb5
+  SetStmt b4a5c291eacbbe63a2f3da5a9a403704
+  Stmt 9d6806cf0b0e84c849c625c7777751ec
+  Stmt 7639a2314403c51b20d8aa4e43e17217
+  SubtractExpr 6af4491233e7c821c2a8d85c13ffb15b
+  Val 71245a46e89dff0f8356c3ed746ae9e2
+  VarExpr 3a65b158ee2ce4444c776436adc2ca18
+  consts 3832aa53649195f24011b82a11ef9ea7
+import  -/  Parser eb4aaad678ea88b8a3c42bf6279e4504
+  exports: d73b525b141abdf0a6208298a7d27829
+  p_line cb308417a67cfc9fc0bc69fb94d0e8a0
+  runParser caae80e53a7e47ad5e41441ae5f6d3b5
+import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Strict d885b1d9a1e033a14f7012d569830271
+8c0d7280e9d562f0a6d2485a32556f2f
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Lib.$trModule2 Lib.$trModule1) -}
+09b6fac830fc4e67e42113861269c323
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Lib"#) -}
+b81d186c653a5099171bca86db54f960
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g"#) -}
+7a7fa40c4024604b72781632d2913265
+  $wrun ::
+    GHC.Base.String
+    -> Data.Either.Either
+         GHC.Base.String (Common.Env, GHC.Base.Maybe Common.Val)
+  {- Arity: 1, Strictness: <L,U>, Inline: [0],
+     Unfolding: (\ (w :: GHC.Base.String) ->
+                 case Parser.runParser
+                        @ Common.Line
+                        Parser.p_line1
+                          `cast`
+                        (Sym (Text.Megaparsec.Prim.N:ParsecT[0]
+                                  <Text.Megaparsec.Error.Dec>_N
+                                  <[GHC.Types.Char]>_N
+                                  <Data.Functor.Identity.Identity>_R
+                                  <Common.Line>_R))
+                        w of wild {
+                   Data.Either.Left err
+                   -> Data.Either.Left
+                        @ GHC.Base.String
+                        @ (Common.Env, GHC.Base.Maybe Common.Val)
+                        err
+                   Data.Either.Right line -> Lib.run1 }) -}
+280b9514b065be2db735da03224c9ac2
+  eval :: Common.Expr -> Common.Env -> Common.Val
+  {- Arity: 2, Strictness: <B,A><B,A>x,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Common.Expr) (ds1 :: Common.Env) -> Lib.eval1) -}
+c64629fbef94732ae2c9b3bd8d323777
+  eval1 :: Common.Val
+  {- Strictness: x -}
+05d547152b5bcf914bb5210f2500cf97
+  exec :: Common.Stmt -> Common.Env -> Common.Env
+  {- Arity: 2, Strictness: <B,A><B,A>x,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Common.Stmt) (ds1 :: Common.Env) -> Lib.exec1) -}
+f7d005a44a5be96c95df1a56ee78f44d
+  exec1 :: Data.HashMap.Base.HashMap GHC.Base.String Common.Val
+  {- Strictness: x -}
+cbccd15581c392dccf2d7473ee726b1b
+  run ::
+    GHC.Base.String
+    -> Common.Env
+    -> Data.Either.Either
+         GHC.Base.String (Common.Env, GHC.Base.Maybe Common.Val)
+  {- Arity: 2, Strictness: <L,U><L,A>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ (w :: GHC.Base.String) (w1 :: Common.Env) -> Lib.$wrun w) -}
+d058d25efe125549e66d9fb50ac6d01c
+  run1 ::
+    Data.Either.Either
+      GHC.Base.String (Common.Env, GHC.Base.Maybe Common.Val)
+  {- Unfolding: (Data.Either.Right
+                   @ GHC.Base.String
+                   @ (Common.Env, GHC.Base.Maybe Common.Val)
+                   (case Lib.runLine
+                    ret_ty (Common.Env, GHC.Base.Maybe Common.Val)
+                    of {})) -}
+fb333f992d625f37fd72d0c92bef62f3
+  runLine ::
+    Common.Line
+    -> Common.Env -> (Common.Env, GHC.Base.Maybe Common.Val)
+  {- Strictness: x -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
