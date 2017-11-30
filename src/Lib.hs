@@ -11,6 +11,7 @@ module Lib ( run
 -- =======
 
 import qualified Data.HashMap.Strict as H (insert, lookup)
+import Data.Maybe
 
 -- Local
 -- ----
@@ -42,10 +43,9 @@ runLine (Expr e) env = (env, Just (eval e env))
 
 -- Executor
 -- --------
---TODO: Update HashMap with variables as keys and Values as values
 exec :: Stmt -> Env -> Env
-exec (SetStmt var exp) env = insert var exp env
-exec (SeqStmt first:rest) = exec rest (exec first env)
+exec (SetStmt var (NumExpr e)) env = H.insert var (NumVal e) env
+exec (SeqStmt (first:rest)) env = exec (SeqStmt rest) (exec first env)
 
 -- Lifting Functions
 -- -----------------
@@ -56,24 +56,26 @@ exec (SeqStmt first:rest) = exec rest (exec first env)
 -- ExnVal, then this function returns ExnVal "Cannot lift.".
 
 liftNumOp :: (Float -> Float -> Float) -> Val -> Val -> Val
-liftNumOp f ExnVal _ = ExnVal "Cannot lift"
-liftNumOp f x ExnVal = ExnVal "Cannot lift"
-liftNumOp f (Val x) (Val y) = Val (f x y)
-liftNumOp _ _ = undefined
+liftNumOp f (ExnVal s) _ = ExnVal "Cannot lift"
+liftNumOp f x (ExnVal s) = ExnVal "Cannot lift"
+liftNumOp f (NumVal x) (NumVal y) = NumVal (f x y)
+liftNumOp _ _ _  = undefined
 
 -- Evaluator
 -- ---------
 
 eval :: Expr -> Env -> Val
 -- ### NumExpr
-eval (NumExpr e) env = Val e
+eval (NumExpr e) env = NumVal e
 -- ### ConstExpr
-eval (ConstExpr e) env = Val (lookup e consts)
+eval (ConstExpr e) env = case (lookup e consts) of Nothing -> err "Variable does not exist"
+												   Just a -> NumVal a
 -- ### VarExpr
-eval (VarExpr e) env = Val (lookup e env)
+eval (VarExpr e) env = NumVal (fromJust (lookup e env))
 -- ### Operator Expressions (AddExpr, ...)
 eval (AddExpr (NumExpr num1) (NumExpr num2)) env = liftNumOp (+) (NumVal num1) (NumVal num2)
-
 eval (SubtractExpr (NumExpr num1) (NumExpr num2)) env = liftNumOp (-) (NumVal num1) (NumVal num2)
+eval (MultiplyExpr (NumExpr num1) (NumExpr num2)) env = liftNumOp (*) (NumVal num1) (NumVal num2)
+eval (DivideExpr (NumExpr num1) (NumExpr num2)) env = liftNumOp (/) (NumVal num1) (NumVal num2)
+
 -- remember to use liftNumOp here
-eval _ _ = undefined
