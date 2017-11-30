@@ -44,7 +44,8 @@ runLine (Expr e) env = (env, Just (eval e env))
 -- --------
 --TODO: Update HashMap with variables as keys and Values as values
 exec :: Stmt -> Env -> Env
-exec _ _ = undefined
+exec (SetStmt var exp) env = insert var exp env
+exec (SeqStmt first:rest) = exec rest (exec first env)
 
 -- Lifting Functions
 -- -----------------
@@ -69,7 +70,7 @@ eval (NumExpr e) env = Val e
 -- ### ConstExpr
 eval (ConstExpr e) env = Val (lookup e consts)
 -- ### VarExpr
-eval (VarExpr e) env = Val (lookup e Env)
+eval (VarExpr e) env = Val (lookup e env)
 -- ### Operator Expressions (AddExpr, ...)
 eval (AddExpr (NumExpr num1) (NumExpr num2)) env = liftNumOp (+) (NumVal num1) (NumVal num2)
 
