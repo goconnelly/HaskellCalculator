@@ -28,12 +28,26 @@
   (major1) == 0 && (major2) <  2 || \
   (major1) == 0 && (major2) == 2 && (minor) <= 8)
 
-/* tool alex-3.1.4 */
-#define TOOL_VERSION_alex "3.1.4"
+/* package QuickCheck-2.9.2 */
+#define VERSION_QuickCheck "2.9.2"
+#define MIN_VERSION_QuickCheck(major1,major2,minor) (\
+  (major1) <  2 || \
+  (major1) == 2 && (major2) <  9 || \
+  (major1) == 2 && (major2) == 9 && (minor) <= 2)
+
+/* package hspec-2.4.4 */
+#define VERSION_hspec "2.4.4"
+#define MIN_VERSION_hspec(major1,major2,minor) (\
+  (major1) <  2 || \
+  (major1) == 2 && (major2) <  4 || \
+  (major1) == 2 && (major2) == 4 && (minor) <= 4)
+
+/* tool alex-3.2.1 */
+#define TOOL_VERSION_alex "3.2.1"
 #define MIN_TOOL_VERSION_alex(major1,major2,minor) (\
   (major1) <  3 || \
-  (major1) == 3 && (major2) <  1 || \
-  (major1) == 3 && (major2) == 1 && (minor) <= 4)
+  (major1) == 3 && (major2) <  2 || \
+  (major1) == 3 && (major2) == 2 && (minor) <= 1)
 
 /* tool gcc-5.2.0 */
 #define TOOL_VERSION_gcc "5.2.0"
@@ -84,12 +98,12 @@
   (major1) == 0 && (major2) <  68 || \
   (major1) == 0 && (major2) == 68 && (minor) <= 1)
 
-/* tool hscolour-1.22 */
-#define TOOL_VERSION_hscolour "1.22"
+/* tool hscolour-1.24 */
+#define TOOL_VERSION_hscolour "1.24"
 #define MIN_TOOL_VERSION_hscolour(major1,major2,minor) (\
   (major1) <  1 || \
-  (major1) == 1 && (major2) <  22 || \
-  (major1) == 1 && (major2) == 22 && (minor) <= 0)
+  (major1) == 1 && (major2) <  24 || \
+  (major1) == 1 && (major2) == 24 && (minor) <= 0)
 
 /* tool strip-2.25 */
 #define TOOL_VERSION_strip "2.25"

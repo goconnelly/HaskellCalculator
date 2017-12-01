@@ -23,7 +23,7 @@ data Expr = NumExpr      Float
 
 data Val = NumVal Float
          | ExnVal String
- deriving (Eq, Show)
+ deriving Eq
 
 -- Typeclass instances
 -- -------------------
@@ -35,7 +35,7 @@ data Val = NumVal Float
 
 instance Show Val where
 	show (NumVal x) = show x
---	show (ExnVal x) = 
+	show (ExnVal x) = show ("Error: "++x)
 
 type Env = H.HashMap String Val
 

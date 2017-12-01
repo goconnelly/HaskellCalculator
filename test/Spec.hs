@@ -142,7 +142,7 @@ test_varExpr = hspec $ describe "Testing evaluator on VarExpr" $ do
   describe "undefined variable in calculation" $
     it "eval 'm + 1' -> ExnVal \"...\""$
       eval (AddExpr (VarExpr "m") (NumExpr 1)) testingEnv
-        `shouldBe` ExnVal "Cannot lift"
+        `shouldBe` ExnVal "Cannot lift."
 
 -- ### AddExpr
 
@@ -208,10 +208,15 @@ test_divideExpr = hspec $ describe "Testing evaluator on DivideExpr" $ do
     it "Quickcheck: eval 'x / 1' -> x" $
       property prop_divideIdentity
 
-  describe "check division by zero" $
-    it "5 / 0 -> ExnVal \"Exception: Division by zero\"" $
+  describe "check division by zero (1)" $
+    it "5 / 0 -> ExnVal \"Division by zero.\"" $
       eval (DivideExpr (NumExpr 5) (NumExpr 0)) emptyEnv
-        `shouldBe` ExnVal "Exception: Division by zero"
+        `shouldBe` ExnVal "Division by zero."
+
+  describe "check division by zero (2)" $
+    it "5 / (1 * 0)-> ExnVal \"Division by zero.\"" $
+      eval (DivideExpr (NumExpr 5) (MultiplyExpr (NumExpr 1) (NumExpr 0)))
+        emptyEnv `shouldBe` ExnVal "Division by zero."
 
   describe "check simple division" $
     it "6 / 3 -> " $

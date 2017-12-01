@@ -44,7 +44,8 @@ runLine (Expr e) env = (env, Just (eval e env))
 -- Executor
 -- --------
 exec :: Stmt -> Env -> Env
-exec (SetStmt var (NumExpr e)) env = H.insert var (NumVal e) env
+exec (SetStmt var e) env = H.insert var (eval e env) env
+exec (SeqStmt [first, second]) env = exec second (exec first env)
 exec (SeqStmt (first:rest)) env = exec (SeqStmt rest) (exec first env)
 
 -- Lifting Functions
@@ -56,8 +57,8 @@ exec (SeqStmt (first:rest)) env = exec (SeqStmt rest) (exec first env)
 -- ExnVal, then this function returns ExnVal "Cannot lift.".
 
 liftNumOp :: (Float -> Float -> Float) -> Val -> Val -> Val
-liftNumOp f (ExnVal s) _ = ExnVal "Cannot lift"
-liftNumOp f x (ExnVal s) = ExnVal "Cannot lift"
+liftNumOp f (ExnVal s) _ = ExnVal "Cannot lift."
+liftNumOp f x (ExnVal s) = ExnVal "Cannot lift."
 liftNumOp f (NumVal x) (NumVal y) = NumVal (f x y)
 liftNumOp _ _ _  = undefined
 
@@ -69,14 +70,17 @@ eval :: Expr -> Env -> Val
 eval (NumExpr e) env = NumVal e
 -- ### ConstExpr
 eval (ConstExpr e) env = case (H.lookup e consts) of 
-	Nothing -> ExnVal ("Variable name "++e++ " is not defined.")
+	Nothing -> ExnVal ("Constant "++e++" is not defined.")
 	Just a -> NumVal a
 -- ### VarExpr
-eval (VarExpr e) env = fromJust (H.lookup e env)
+eval (VarExpr e) env = case (H.lookup e env) of 
+	Nothing -> ExnVal ("Variable name "++e++ " is not defined.")
+	Just a -> a
 -- ### Operator Expressions (AddExpr, ...)
-eval (AddExpr (NumExpr num1) (NumExpr num2)) env = liftNumOp (+) (NumVal num1) (NumVal num2)
-eval (SubtractExpr (NumExpr num1) (NumExpr num2)) env = liftNumOp (-) (NumVal num1) (NumVal num2)
-eval (MultiplyExpr (NumExpr num1) (NumExpr num2)) env = liftNumOp (*) (NumVal num1) (NumVal num2)
-eval (DivideExpr (NumExpr num1) (NumExpr num2)) env = liftNumOp (/) (NumVal num1) (NumVal num2)
-
+eval (AddExpr num1 num2) env = liftNumOp (+) (eval num1 env) (eval num2 env)
+eval (SubtractExpr num1 num2) env = liftNumOp (-) (eval num1 env) (eval num2 env)
+eval (MultiplyExpr num1 num2) env = liftNumOp (*) (eval num1 env) (eval num2 env)
+eval (DivideExpr num1 num2) env = case eval num2 env of 
+	(NumVal 0) -> ExnVal ("Division by zero.")
+	(NumVal x) -> liftNumOp (/) (eval num1 env) (eval (NumExpr x) env)
 -- remember to use liftNumOp here

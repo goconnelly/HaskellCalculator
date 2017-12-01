@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-21 17:03:18.5870444 UTC
+2017-12-01 18:29:12.0256548 UTC
 
 interface main@main:Main 8002
-  interface hash: 275654b840c395654acea118bf63cd6e
-  ABI hash: 80481737917864a94442a26f6545eff0
+  interface hash: 4dc0de9ec4575583721297897d59692a
+  ABI hash: 7b13ecf51195bfda377ffb75e0ffa6ba
   export-list hash: 7a0a7f9efb651d725d96df8f8a9f2703
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: d03f9c13daa759bf70867d2835fdcb70
@@ -90,8 +90,8 @@ import  -/  base-4.9.1.0:GHC.Show eca5834daba3b6a2bbbe64ab52056707
 import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
 import  -/  base-4.9.1.0:System.Environment 438c0b0bc0f94461b9c946d062a7eab9
 import  -/  base-4.9.1.0:System.IO 5daf3f384209c11d9566e3409af8ec5d
-import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Common 6e5679e33055a79cde65cf7d1c45b0e4
-import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Lib a43e24c33fde54a130eabe5bfbc88321
+import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Common 74ea2493033e881d111a7cc5a2556094
+import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Lib 471820588e1dcc88a8e04dc405956566
 import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Parser eb4aaad678ea88b8a3c42bf6279e4504
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Base bc82d1baec8d9b794d947a6de22d7684
@@ -108,22 +108,12 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-bdcac082ec659be9565f36bc23a358a3
-  $wrepl ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
-74d5307111f3dbf1c8df552d48b43dd2
-  $wreplDebug ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
-9e78347e6e8981836be302757239943e
+441f4950205b4b5536c612c9ad632303
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-d0fd198781dcfc415a07cd8c60cedc83
+8419cd5b8422332f36352b0378131dd9
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -147,7 +137,7 @@ d0fd198781dcfc415a07cd8c60cedc83
                            ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
                            of {}
                         : ds2 xs -> Main.main2 xs ipv } } }) -}
-dac82bd0a975e6436c0497f0e138e619
+191591571084a6fe7b7a30bb7bd72b2e
   main2 ::
     [GHC.Base.String]
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -156,14 +146,17 @@ dac82bd0a975e6436c0497f0e138e619
      Unfolding: (\ (args :: [GHC.Base.String])
                    (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case args of wild {
-                   [] -> Main.$wrepl eta
+                   []
+                   -> Main.main7
+                        (Data.HashMap.Base.Empty @ GHC.Base.String @ Common.Val)
+                        eta
                    : ds ds1
                    -> let {
                         $wfail :: GHC.Prim.State# GHC.Prim.RealWorld
                                   -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
                           {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
                         = \ (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                          case GHC.Base.eqString ds Main.main5 of wild1 {
+                          case GHC.Base.eqString ds Main.main6 of wild1 {
                             GHC.Types.False
                             -> GHC.IO.Handle.Text.hPutStr2
                                  GHC.IO.Handle.FD.stdout
@@ -172,7 +165,7 @@ dac82bd0a975e6436c0497f0e138e619
                                  w
                             GHC.Types.True
                             -> case ds1 of wild2 {
-                                 [] -> Main.main4 w
+                                 [] -> Main.main5 w
                                  : ipv ipv1
                                  -> GHC.IO.Handle.Text.hPutStr2
                                       GHC.IO.Handle.FD.stdout
@@ -180,69 +173,65 @@ dac82bd0a975e6436c0497f0e138e619
                                       GHC.Types.True
                                       w } }
                       } in
-                      case GHC.Base.eqString ds Main.main3 of wild1 {
+                      case GHC.Base.eqString ds Main.main4 of wild1 {
                         GHC.Types.False -> $wfail eta
                         GHC.Types.True
                         -> case ds1 of wild2 {
-                             [] -> Main.$wreplDebug eta : ipv ipv1 -> $wfail eta } } }) -}
-e7807dc6b67b2f448cfd559c426662c4
-  main3 :: [GHC.Types.Char]
+                             []
+                             -> Main.main3
+                                  (Data.HashMap.Base.Empty @ GHC.Base.String @ Common.Val)
+                                  eta
+                             : ipv ipv1 -> $wfail eta } } }) -}
+6cacc40e7ce5b2986d0df4800e4cad5f
+  main3 ::
+    Common.Env
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><S,U> -}
+1044adb11b5bc764b8d387da8dd544a3
+  main4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "-d"#) -}
-22379d6f439ad9dadce1a111f48a5909
-  main4 ::
+a741f190ec378415baf02815b0c2b608
+  main5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1, Strictness: <S,U> -}
-c2db622bc4e821c1fcf24a4eed160433
-  main5 :: [GHC.Types.Char]
+a7d2d03e280f0db352f6d57b15529829
+  main6 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "-p"#) -}
-e3554bfc1b5bb355988ed4c99179d72c
-  main6 ::
+c57659a1f7dc3411c730a70efa7f01a5
+  main7 ::
+    Common.Env
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><S,U> -}
+d60a4fcb4f301adb556d6eaa9b63e633
+  main8 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-901bb816292386c33f1d6a47cceaf30e
+08f0d6b50e75d6006e5b64eec23a3ac8
   parserTest :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
-                Main.main4 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-a1514be4b31775447ee5fbba279c2655
+                Main.main5 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+a4ea2a0a48f5f3bbf0f203dfde97407a
   repl :: Common.Env -> GHC.Types.IO ()
-  {- Arity: 2, Strictness: <L,A><S,U>,
+  {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
-                Main.repl1
+                Main.main7
                   `cast`
                 (<Common.Env>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-5e504eb2338b828f8c9ddd7646df4593
-  repl1 ::
-    Common.Env
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 2, Strictness: <L,A><S,U>, Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, True)
-                (\ (w :: Common.Env)
-                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 Main.$wrepl w1) -}
-d02175ccd36b62e6b875b9cd1a307d94
+2794bfaa79153a31a3767f9197416dc5
   replDebug :: Common.Env -> GHC.Types.IO ()
-  {- Arity: 2, Strictness: <L,A><S,U>,
+  {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
-                Main.replDebug1
+                Main.main3
                   `cast`
                 (<Common.Env>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-df8c03917b91690b9b2a4f8e92d10832
-  replDebug1 ::
-    Common.Env
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 2, Strictness: <L,A><S,U>, Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, True)
-                (\ (w :: Common.Env)
-                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 Main.$wreplDebug w1) -}
 76a496d341ec894a0150fbcb8fd907f3
   usage :: GHC.Base.String
   {- Unfolding: (GHC.CString.unpackCString#
