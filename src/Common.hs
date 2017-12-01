@@ -33,6 +33,8 @@ data Val = NumVal Float
 -- Don't forget to remove the Show from the deriving list in the data
 -- declaration for Val!
 
+
+
 type Env = H.HashMap String Val
 
 -- Operators

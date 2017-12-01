@@ -68,10 +68,11 @@ eval :: Expr -> Env -> Val
 -- ### NumExpr
 eval (NumExpr e) env = NumVal e
 -- ### ConstExpr
-eval (ConstExpr e) env = case (lookup e consts) of Nothing -> err "Variable does not exist"
-												   Just a -> NumVal a
+eval (ConstExpr e) env = case (H.lookup e consts) of 
+	Nothing -> ExnVal ("Variable name "++e++ " is not defined.")
+	Just a -> NumVal a
 -- ### VarExpr
-eval (VarExpr e) env = NumVal (fromJust (lookup e env))
+eval (VarExpr e) env = fromJust (H.lookup e env)
 -- ### Operator Expressions (AddExpr, ...)
 eval (AddExpr (NumExpr num1) (NumExpr num2)) env = liftNumOp (+) (NumVal num1) (NumVal num2)
 eval (SubtractExpr (NumExpr num1) (NumExpr num2)) env = liftNumOp (-) (NumVal num1) (NumVal num2)
