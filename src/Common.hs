@@ -33,7 +33,9 @@ data Val = NumVal Float
 -- Don't forget to remove the Show from the deriving list in the data
 -- declaration for Val!
 
-
+instance Show Val where
+	show (NumVal x) = show x
+--	show (ExnVal x) = 
 
 type Env = H.HashMap String Val
 
