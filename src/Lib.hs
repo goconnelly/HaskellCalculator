@@ -66,16 +66,24 @@ liftNumOp _ _ _  = undefined
 -- ---------
 
 eval :: Expr -> Env -> Val
+
+
 -- ### NumExpr
 eval (NumExpr e) env = NumVal e
+
+
 -- ### ConstExpr
 eval (ConstExpr e) env = case (H.lookup e consts) of 
 	Nothing -> ExnVal ("Constant "++e++" is not defined.")
 	Just a -> NumVal a
+
+
 -- ### VarExpr
 eval (VarExpr e) env = case (H.lookup e env) of 
 	Nothing -> ExnVal ("Variable name "++e++ " is not defined.")
 	Just a -> a
+
+
 -- ### Operator Expressions (AddExpr, ...)
 eval (AddExpr num1 num2) env = liftNumOp (+) (eval num1 env) (eval num2 env)
 eval (SubtractExpr num1 num2) env = liftNumOp (-) (eval num1 env) (eval num2 env)
