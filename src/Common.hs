@@ -10,7 +10,8 @@ data Line = Stmt Stmt | Expr Expr
 
 data Stmt = SetStmt  String Expr
           | SeqStmt  [Stmt]
-  deriving Show
+	  | FuncStmt String [String] Expr
+  deriving (Eq, Show)
 
 data Expr = NumExpr      Float
           | ConstExpr    String
@@ -19,9 +20,11 @@ data Expr = NumExpr      Float
           | SubtractExpr Expr Expr
           | MultiplyExpr Expr Expr
           | DivideExpr   Expr Expr
-  deriving Show
+	  | AppExpr	 String [Expr]
+deriving (Eq, Show)
 
 data Val = NumVal Float
+	 | CloVal [String] Expr Env
          | ExnVal String
  deriving Eq
 
@@ -36,6 +39,9 @@ data Val = NumVal Float
 instance Show Val where
 	show (NumVal x) = show x
 	show (ExnVal x) = show ("Error: "++x)
+	show (CloVal params body env) = "<" ++ show params ++ ", "
+					    ++ show body ++ ", "
+					    ++ show env ++ ">"
 
 type Env = H.HashMap String Val
 
