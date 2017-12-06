@@ -20,8 +20,8 @@ extra-source-files:
 library
   hs-source-dirs:      src
   exposed-modules:     Lib
-  other-modules:       Parser
-                     , Common
+                     , Parser
+  other-modules:       Common
   build-depends:       base >= 4.7 && < 5
                      , megaparsec >= 5.3 && < 6
                      , unordered-containers

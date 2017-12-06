@@ -9,8 +9,8 @@ data Line = Stmt Stmt | Expr Expr
   deriving Show
 
 data Stmt = SetStmt  String Expr
-          | SeqStmt  [Stmt]
-	  | FuncStmt String [String] Expr
+			| SeqStmt  [Stmt]
+			| FuncStmt String [String] Expr
   deriving (Eq, Show)
 
 data Expr = NumExpr      Float
@@ -20,16 +20,16 @@ data Expr = NumExpr      Float
           | SubtractExpr Expr Expr
           | MultiplyExpr Expr Expr
           | DivideExpr   Expr Expr
-	  | AppExpr	 String [Expr]
+	      | AppExpr 	 String [Expr]
 deriving (Eq, Show)
 
 data Val = NumVal Float
-	 | CloVal [String] Expr Env
-         | ExnVal String
+		 | CloVal [String] Expr Env
+		 | ExnVal String
  deriving Eq
 
--- Typeclass instances
 -- -------------------
+-- Typeclass instances
  
 -- TODO: define instance for `Show Val` here
 --
