@@ -92,3 +92,5 @@ eval (DivideExpr num1 num2) env = case eval num2 env of
 	(NumVal 0) -> ExnVal ("Division by zero.")
 	(NumVal x) -> liftNumOp (/) (eval num1 env) (eval (NumExpr x) env)
 -- remember to use liftNumOp here
+
+eval (AppExpr string [exp]) env = undefined
