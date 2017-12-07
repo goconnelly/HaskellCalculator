@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-01 17:23:02.2332848 UTC
+2017-12-07 17:21:49.6961934 UTC
 
 interface calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Common 8002
-  interface hash: 8916fa7a8e702697299311fcc95b0ab7
-  ABI hash: 74ea2493033e881d111a7cc5a2556094
-  export-list hash: ffb5b4afd4db5415965f9f33be01d11b
+  interface hash: 56d311b57956862e9b55fa6137737e36
+  ABI hash: 7c8577ad357058b243b7f3a9d016c5e0
+  export-list hash: 02b86d8d7ebf5d2c7d9b0b6f8348dd36
   orphan hash: 864dff80c1a8d4e0e0c50cb1d7e7547f
   flag hash: dc252629160a211b4eef177e4c1f5a39
   sig of: Nothing
@@ -14,10 +14,10 @@ interface calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Common 8002
 exports:
   Common.consts
   Common.Env
-  Common.Expr{Common.AddExpr Common.ConstExpr Common.DivideExpr Common.MultiplyExpr Common.NumExpr Common.SubtractExpr Common.VarExpr}
+  Common.Expr{Common.AddExpr Common.AppExpr Common.ConstExpr Common.DivideExpr Common.MultiplyExpr Common.NumExpr Common.SubtractExpr Common.VarExpr}
   Common.Line{Common.Expr Common.Stmt}
-  Common.Stmt{Common.SeqStmt Common.SetStmt}
-  Common.Val{Common.ExnVal Common.NumVal}
+  Common.Stmt{Common.FuncStmt Common.SeqStmt Common.SetStmt}
+  Common.Val{Common.CloVal Common.ExnVal Common.NumVal}
 module dependencies:
 package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
                       binary-0.8.3.0@binary-0.8.3.0
@@ -60,49 +60,53 @@ import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
 import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Base bc82d1baec8d9b794d947a6de22d7684
 import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Strict d885b1d9a1e033a14f7012d569830271
-804f6571ba567a98857e81f04acb8c3e
+b5eb1b9a874f72d45d66d66dc3ebd80b
+  $fEqExpr :: GHC.Classes.Eq Common.Expr
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Common.Expr Common.$fEqExpr_$c== Common.$fEqExpr_$c/= -}
+b5eb1b9a874f72d45d66d66dc3ebd80b
+  $fEqExpr_$c/= :: Common.Expr -> Common.Expr -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Common.Expr) (b :: Common.Expr) ->
+                 case Common.$fEqExpr_$c== a b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+b5eb1b9a874f72d45d66d66dc3ebd80b
+  $fEqExpr_$c== :: Common.Expr -> Common.Expr -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+218bba9a49c1dae1a3024ee2b3c71b99
+  $fEqStmt :: GHC.Classes.Eq Common.Stmt
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Common.Stmt Common.$fEqStmt_$c== Common.$fEqStmt_$c/= -}
+218bba9a49c1dae1a3024ee2b3c71b99
+  $fEqStmt_$c/= :: Common.Stmt -> Common.Stmt -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+218bba9a49c1dae1a3024ee2b3c71b99
+  $fEqStmt_$c== :: Common.Stmt -> Common.Stmt -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+9b2b56e57885e27fef7dad9cf185f7f1
   $fEqVal :: GHC.Classes.Eq Common.Val
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun:.
                   @ Common.Val Common.$fEqVal_$c== Common.$fEqVal_$c/= -}
-804f6571ba567a98857e81f04acb8c3e
+9b2b56e57885e27fef7dad9cf185f7f1
   $fEqVal_$c/= :: Common.Val -> Common.Val -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
-     Unfolding: (\ (a :: Common.Val) (b :: Common.Val) ->
-                 case a of wild {
-                   Common.NumVal a1
-                   -> case b of wild1 {
-                        Common.NumVal b1
-                        -> case a1 of wild2 { GHC.Types.F# x ->
-                           case b1 of wild3 { GHC.Types.F# y ->
-                           case GHC.Prim.tagToEnum#
-                                  @ GHC.Types.Bool
-                                  (GHC.Prim.eqFloat# x y) of wild4 {
-                             GHC.Types.False -> GHC.Types.True
-                             GHC.Types.True -> GHC.Types.False } } }
-                        Common.ExnVal ipv -> GHC.Types.True }
-                   Common.ExnVal a1
-                   -> case b of wild1 {
-                        Common.NumVal ipv -> GHC.Types.True
-                        Common.ExnVal b1
-                        -> case GHC.Base.eqString a1 b1 of wild2 {
-                             GHC.Types.False -> GHC.Types.True
-                             GHC.Types.True -> GHC.Types.False } } }) -}
-804f6571ba567a98857e81f04acb8c3e
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Common.Val) (b :: Common.Val) ->
+                 case Common.$fEqVal_$c== a b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+9b2b56e57885e27fef7dad9cf185f7f1
   $fEqVal_$c== :: Common.Val -> Common.Val -> GHC.Types.Bool
-  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
-     Unfolding: (\ (ds :: Common.Val) (ds1 :: Common.Val) ->
-                 case ds of wild {
-                   Common.NumVal a1
-                   -> case ds1 of wild1 {
-                        Common.NumVal b1 -> GHC.Classes.eqFloat a1 b1
-                        Common.ExnVal ipv -> GHC.Types.False }
-                   Common.ExnVal a1
-                   -> case ds1 of wild1 {
-                        Common.NumVal ipv -> GHC.Types.False
-                        Common.ExnVal b1 -> GHC.Base.eqString a1 b1 } }) -}
-ac4affb1772fca4000aab1ef97c37365
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+b5eb1b9a874f72d45d66d66dc3ebd80b
   $fShowExpr :: GHC.Show.Show Common.Expr
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -111,11 +115,11 @@ ac4affb1772fca4000aab1ef97c37365
                   Common.$fShowExpr_$cshowsPrec
                   Common.$fShowExpr_$cshow
                   Common.$fShowExpr_$cshowList -}
-ac4affb1772fca4000aab1ef97c37365
+b5eb1b9a874f72d45d66d66dc3ebd80b
   $fShowExpr1 :: Common.Expr -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (\ (w :: Common.Expr) -> Common.$w$cshowsPrec 0# w) -}
-ac4affb1772fca4000aab1ef97c37365
+b5eb1b9a874f72d45d66d66dc3ebd80b
   $fShowExpr_$cshow :: Common.Expr -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -124,13 +128,13 @@ ac4affb1772fca4000aab1ef97c37365
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-ac4affb1772fca4000aab1ef97c37365
+b5eb1b9a874f72d45d66d66dc3ebd80b
   $fShowExpr_$cshowList :: [Common.Expr] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Common.Expr
                    Common.$fShowExpr1) -}
-ac4affb1772fca4000aab1ef97c37365
+b5eb1b9a874f72d45d66d66dc3ebd80b
   $fShowExpr_$cshowsPrec ::
     GHC.Types.Int -> Common.Expr -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: INLINE[0],
@@ -138,7 +142,7 @@ ac4affb1772fca4000aab1ef97c37365
                 (\ (w :: GHC.Types.Int) (w1 :: Common.Expr) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  Common.$w$cshowsPrec ww1 w1 }) -}
-5329ef54c7bebad3e3611f194a85724f
+13f097a6ea259a02c10bb042aa389ece
   $fShowLine :: GHC.Show.Show Common.Line
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -147,7 +151,7 @@ ac4affb1772fca4000aab1ef97c37365
                   Common.$fShowLine_$cshowsPrec
                   Common.$fShowLine_$cshow
                   Common.$fShowLine_$cshowList -}
-5329ef54c7bebad3e3611f194a85724f
+13f097a6ea259a02c10bb042aa389ece
   $fShowLine1 :: Common.Line -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (\ (w :: Common.Line) -> Common.$w$cshowsPrec1 0# w) -}
@@ -157,23 +161,19 @@ d17f70194d03c956e8969a88e70425f3
 b8bdaea419c149bcacfe20e615d2f1a7
   $fShowLine3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Stmt "#) -}
-7639a2314403c51b20d8aa4e43e17217
-  $fShowLine4 :: Common.Stmt -> GHC.Show.ShowS
+25b82bf37466a858b6e58a5496faf540
+  $fShowLine4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "FuncStmt "#) -}
+218bba9a49c1dae1a3024ee2b3c71b99
+  $fShowLine5 :: Common.Stmt -> GHC.Show.ShowS
   {- Arity: 1 -}
-87216981d7605c88913199a2832c45ce
-  $fShowLine5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "SeqStmt "#) -}
-37f94df1e61bc7a17b0bba6affb555c4
+7cad96096191efe7274122aee484b5f1
   $fShowLine6 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "SetStmt "#) -}
-6399a3f85606deff9066ca709c19ed8c
+  {- Unfolding: (GHC.CString.unpackCString# "SeqStmt "#) -}
+54332e90b626881425b9a619b54f60cb
   $fShowLine7 :: [GHC.Types.Char]
-  {- HasNoCafRefs,
-     Unfolding: (GHC.Types.:
-                   @ GHC.Types.Char
-                   GHC.Show.shows4
-                   (GHC.Types.[] @ GHC.Types.Char)) -}
-5329ef54c7bebad3e3611f194a85724f
+  {- Unfolding: (GHC.CString.unpackCString# "SetStmt "#) -}
+13f097a6ea259a02c10bb042aa389ece
   $fShowLine_$cshow :: Common.Line -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: (\ (x :: Common.Line) ->
@@ -182,50 +182,19 @@ b8bdaea419c149bcacfe20e615d2f1a7
                    -> GHC.Base.++
                         @ GHC.Types.Char
                         Common.$fShowLine3
-                        (case b1 of wild1 {
-                           Common.SetStmt b2 b3
-                           -> GHC.Types.:
-                                @ GHC.Types.Char
-                                GHC.Show.shows7
-                                (GHC.Base.++
-                                   @ GHC.Types.Char
-                                   Common.$fShowLine6
-                                   (GHC.Types.:
-                                      @ GHC.Types.Char
-                                      GHC.Show.shows6
-                                      (GHC.Show.showLitString
-                                         b2
-                                         (GHC.Types.:
-                                            @ GHC.Types.Char
-                                            GHC.Show.shows6
-                                            (GHC.Types.:
-                                               @ GHC.Types.Char
-                                               GHC.Show.showSpace1
-                                               (Common.$w$cshowsPrec 11# b3 Common.$fShowLine7))))))
-                           Common.SeqStmt b2
-                           -> GHC.Types.:
-                                @ GHC.Types.Char
-                                GHC.Show.shows7
-                                (GHC.Base.++
-                                   @ GHC.Types.Char
-                                   Common.$fShowLine5
-                                   (GHC.Show.showList__
-                                      @ Common.Stmt
-                                      Common.$fShowLine4
-                                      b2
-                                      Common.$fShowLine7)) })
+                        (Common.$w$cshowsPrec2 11# b1 (GHC.Types.[] @ GHC.Types.Char))
                    Common.Expr b1
                    -> GHC.Base.++
                         @ GHC.Types.Char
                         Common.$fShowLine2
                         (Common.$w$cshowsPrec 11# b1 (GHC.Types.[] @ GHC.Types.Char)) }) -}
-5329ef54c7bebad3e3611f194a85724f
+13f097a6ea259a02c10bb042aa389ece
   $fShowLine_$cshowList :: [Common.Line] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Common.Line
                    Common.$fShowLine1) -}
-5329ef54c7bebad3e3611f194a85724f
+13f097a6ea259a02c10bb042aa389ece
   $fShowLine_$cshowsPrec ::
     GHC.Types.Int -> Common.Line -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: INLINE[0],
@@ -233,7 +202,7 @@ b8bdaea419c149bcacfe20e615d2f1a7
                 (\ (w :: GHC.Types.Int) (w1 :: Common.Line) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  Common.$w$cshowsPrec1 ww1 w1 }) -}
-7639a2314403c51b20d8aa4e43e17217
+218bba9a49c1dae1a3024ee2b3c71b99
   $fShowStmt :: GHC.Show.Show Common.Stmt
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -242,46 +211,22 @@ b8bdaea419c149bcacfe20e615d2f1a7
                   Common.$fShowStmt_$cshowsPrec
                   Common.$fShowStmt_$cshow
                   Common.$fShowStmt_$cshowList -}
-7639a2314403c51b20d8aa4e43e17217
+218bba9a49c1dae1a3024ee2b3c71b99
   $fShowStmt_$cshow :: Common.Stmt -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
-     Unfolding: (\ (x :: Common.Stmt) ->
-                 case x of wild {
-                   Common.SetStmt b1 b2
-                   -> GHC.Base.++
-                        @ GHC.Types.Char
-                        Common.$fShowLine6
-                        (GHC.Types.:
-                           @ GHC.Types.Char
-                           GHC.Show.shows6
-                           (GHC.Show.showLitString
-                              b1
-                              (GHC.Types.:
-                                 @ GHC.Types.Char
-                                 GHC.Show.shows6
-                                 (GHC.Types.:
-                                    @ GHC.Types.Char
-                                    GHC.Show.showSpace1
-                                    (Common.$w$cshowsPrec
-                                       11#
-                                       b2
-                                       (GHC.Types.[] @ GHC.Types.Char))))))
-                   Common.SeqStmt b1
-                   -> GHC.Base.++
-                        @ GHC.Types.Char
-                        Common.$fShowLine5
-                        (GHC.Show.showList__
-                           @ Common.Stmt
-                           Common.$fShowLine4
-                           b1
-                           (GHC.Types.[] @ GHC.Types.Char)) }) -}
-7639a2314403c51b20d8aa4e43e17217
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Common.Stmt) ->
+                 Common.$fShowStmt_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+218bba9a49c1dae1a3024ee2b3c71b99
   $fShowStmt_$cshowList :: [Common.Stmt] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Common.Stmt
-                   Common.$fShowLine4) -}
-7639a2314403c51b20d8aa4e43e17217
+                   Common.$fShowLine5) -}
+218bba9a49c1dae1a3024ee2b3c71b99
   $fShowStmt_$cshowsPrec ::
     GHC.Types.Int -> Common.Stmt -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: INLINE[0],
@@ -289,7 +234,7 @@ b8bdaea419c149bcacfe20e615d2f1a7
                 (\ (w :: GHC.Types.Int) (w1 :: Common.Stmt) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  Common.$w$cshowsPrec2 ww1 w1 }) -}
-804f6571ba567a98857e81f04acb8c3e
+9b2b56e57885e27fef7dad9cf185f7f1
   $fShowVal :: GHC.Show.Show Common.Val
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -298,45 +243,39 @@ b8bdaea419c149bcacfe20e615d2f1a7
                   Common.$fShowVal_$cshowsPrec
                   Common.$fShowVal_$cshow
                   Common.$fShowVal_$cshowList -}
-b10df9d954ca683a03d41e5d96ab66af
-  $fShowVal1 :: [GHC.Types.Char]
-  {- HasNoCafRefs,
-     Unfolding: (GHC.Types.:
-                   @ GHC.Types.Char
-                   GHC.Show.shows6
-                   (GHC.Types.[] @ GHC.Types.Char)) -}
-804f6571ba567a98857e81f04acb8c3e
+9b2b56e57885e27fef7dad9cf185f7f1
+  $fShowVal1 :: Common.Val -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2,
+     Unfolding: (\ (x :: Common.Val) (s :: GHC.Base.String)[OneShot] ->
+                 GHC.Base.++ @ GHC.Types.Char (Common.$fShowVal_$cshow x) s) -}
+9b2b56e57885e27fef7dad9cf185f7f1
   $fShowVal_$cshow :: Common.Val -> GHC.Base.String
-  {- Arity: 1, Strictness: <S,1*U>,
-     Unfolding: (\ (ds :: Common.Val) ->
-                 case ds of wild {
-                   Common.NumVal x -> GHC.Float.$fShowFloat_$cshow x
-                   Common.ExnVal x
-                   -> GHC.Types.:
-                        @ GHC.Types.Char
-                        GHC.Show.shows6
-                        (GHC.Show.showLitString
-                           (GHC.CString.unpackAppendCString# "Error: "# x)
-                           Common.$fShowVal1) }) -}
-804f6571ba567a98857e81f04acb8c3e
+  {- Arity: 1, Strictness: <S,1*U> -}
+9b2b56e57885e27fef7dad9cf185f7f1
   $fShowVal_$cshowList :: [Common.Val] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
-     Unfolding: InlineRule (2, True, False)
-                (\ (ls :: [Common.Val]) (s :: GHC.Base.String) ->
-                 GHC.Show.showList__
-                   @ Common.Val
-                   (Common.$fShowVal_$cshowsPrec GHC.Show.shows22)
-                   ls
-                   s) -}
-804f6571ba567a98857e81f04acb8c3e
+     Unfolding: (\ (ls :: [Common.Val]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ Common.Val Common.$fShowVal1 ls s) -}
+9b2b56e57885e27fef7dad9cf185f7f1
   $fShowVal_$cshowsPrec ::
     GHC.Types.Int -> Common.Val -> GHC.Show.ShowS
-  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
-     Unfolding: InlineRule (3, True, True)
-                (\ (w :: GHC.Types.Int)
-                   (w1 :: Common.Val)
-                   (w2 :: GHC.Base.String) ->
-                 Common.$w$cshowsPrec3 w1 w2) -}
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (ds :: GHC.Types.Int)
+                   (x :: Common.Val)
+                   (s :: GHC.Base.String) ->
+                 GHC.Base.augment
+                   @ GHC.Types.Char
+                   (\ @ b
+                      (c :: GHC.Types.Char -> b -> b)[OneShot]
+                      (n :: b)[OneShot] ->
+                    GHC.Base.foldr
+                      @ GHC.Types.Char
+                      @ b
+                      c
+                      n
+                      (Common.$fShowVal_$cshow x))
+                   s) -}
 fcd8fd3c0c328d2436bb7cc7fde827f3
   $s$wupdateOrSnocWithKey ::
     ([GHC.Types.Char] -> v -> v -> v)
@@ -479,6 +418,30 @@ fcd8fd3c0c328d2436bb7cc7fde827f3
   $tc'AddExpr1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'AddExpr"#) -}
+c5a4c4eaa4c66730580cff8153c97d12
+  $tc'AppExpr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16944684730481415790##
+                   3298351105178035145##
+                   Common.$trModule
+                   Common.$tc'AppExpr1) -}
+ebc863ae8492b92c3533b46f706686c3
+  $tc'AppExpr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'AppExpr"#) -}
+b34b4773226a424558a93b65191389d9
+  $tc'CloVal :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2720425531143769970##
+                   17182010304105943430##
+                   Common.$trModule
+                   Common.$tc'CloVal1) -}
+9f1ca317bc9eb3939db2256378a2f574
+  $tc'CloVal1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'CloVal"#) -}
 e7788ac55ba38913f5797bf26864d73e
   $tc'ConstExpr :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
@@ -527,6 +490,18 @@ bbca9acdf631c6f3e4f1faba5204a3dd
   $tc'Expr1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Expr"#) -}
+4464299fcff83e2e69bd2ae46d610f30
+  $tc'FuncStmt :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17399942788441315915##
+                   15422436275689544078##
+                   Common.$trModule
+                   Common.$tc'FuncStmt1) -}
+d60fba6dd641499d5a1caf42af9462a9
+  $tc'FuncStmt1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'FuncStmt"#) -}
 a2b68775d33ea60a598020af95cda81c
   $tc'MultiplyExpr :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
@@ -686,10 +661,10 @@ d7e00f4b1baf38bb499397c9642a1695
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS
                    "calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g"#) -}
-ac4affb1772fca4000aab1ef97c37365
+b5eb1b9a874f72d45d66d66dc3ebd80b
   $w$cshowsPrec :: GHC.Prim.Int# -> Common.Expr -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0] -}
-5329ef54c7bebad3e3611f194a85724f
+13f097a6ea259a02c10bb042aa389ece
   $w$cshowsPrec1 :: GHC.Prim.Int# -> Common.Line -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0],
      Unfolding: (\ (ww :: GHC.Prim.Int#) (w :: Common.Line) ->
@@ -734,7 +709,7 @@ ac4affb1772fca4000aab1ef97c37365
                                 @ GHC.Types.Char
                                 Common.$fShowLine2
                                 (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x))) } }) -}
-7639a2314403c51b20d8aa4e43e17217
+218bba9a49c1dae1a3024ee2b3c71b99
   $w$cshowsPrec2 :: GHC.Prim.Int# -> Common.Stmt -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0],
      Unfolding: (\ (ww :: GHC.Prim.Int#) (w :: Common.Stmt) ->
@@ -749,7 +724,7 @@ ac4affb1772fca4000aab1ef97c37365
                         = \ (x :: GHC.Base.String) ->
                           GHC.Base.++
                             @ GHC.Types.Char
-                            Common.$fShowLine6
+                            Common.$fShowLine7
                             (GHC.Types.:
                                @ GHC.Types.Char
                                GHC.Show.shows6
@@ -778,8 +753,8 @@ ac4affb1772fca4000aab1ef97c37365
                         -> \ (x :: GHC.Base.String) ->
                            GHC.Base.++
                              @ GHC.Types.Char
-                             Common.$fShowLine5
-                             (GHC.Show.showList__ @ Common.Stmt Common.$fShowLine4 b1 x)
+                             Common.$fShowLine6
+                             (GHC.Show.showList__ @ Common.Stmt Common.$fShowLine5 b1 x)
                         GHC.Types.True
                         -> \ (x :: GHC.Base.String) ->
                            GHC.Types.:
@@ -787,37 +762,53 @@ ac4affb1772fca4000aab1ef97c37365
                              GHC.Show.shows7
                              (GHC.Base.++
                                 @ GHC.Types.Char
-                                Common.$fShowLine5
+                                Common.$fShowLine6
                                 (GHC.Show.showList__
                                    @ Common.Stmt
-                                   Common.$fShowLine4
+                                   Common.$fShowLine5
                                    b1
-                                   (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x))) } }) -}
-804f6571ba567a98857e81f04acb8c3e
-  $w$cshowsPrec3 :: Common.Val -> GHC.Base.String -> [GHC.Types.Char]
-  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
-     Unfolding: (\ (w :: Common.Val) (w1 :: GHC.Base.String) ->
-                 case w of wild {
-                   Common.NumVal x
-                   -> case x of ww { GHC.Types.F# ww1 ->
-                      GHC.Base.++
-                        @ GHC.Types.Char
-                        (GHC.Float.$w$sshowSignedFloat1
-                           GHC.Float.$fShowFloat_$sshowFloat
-                           GHC.Show.shows22
-                           ww1
-                           (GHC.Types.[] @ GHC.Types.Char))
-                        w1 }
-                   Common.ExnVal x
-                   -> GHC.Base.++
-                        @ GHC.Types.Char
-                        (GHC.Types.:
-                           @ GHC.Types.Char
-                           GHC.Show.shows6
-                           (GHC.Show.showLitString
-                              (GHC.CString.unpackAppendCString# "Error: "# x)
-                              Common.$fShowVal1))
-                        w1 }) -}
+                                   (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x))) }
+                   Common.FuncStmt b1 b2 b3
+                   -> let {
+                        g :: GHC.Base.String -> GHC.Base.String
+                        = Common.$w$cshowsPrec 11# b3
+                      } in
+                      let {
+                        p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,U> -}
+                        = \ (x :: GHC.Base.String) ->
+                          GHC.Base.++
+                            @ GHC.Types.Char
+                            Common.$fShowLine4
+                            (GHC.Types.:
+                               @ GHC.Types.Char
+                               GHC.Show.shows6
+                               (GHC.Show.showLitString
+                                  b1
+                                  (GHC.Types.:
+                                     @ GHC.Types.Char
+                                     GHC.Show.shows6
+                                     (GHC.Types.:
+                                        @ GHC.Types.Char
+                                        GHC.Show.showSpace1
+                                        (GHC.Show.showList__
+                                           @ [GHC.Types.Char]
+                                           GHC.Show.shows_$cshowList1
+                                           b2
+                                           (GHC.Types.:
+                                              @ GHC.Types.Char
+                                              GHC.Show.showSpace1
+                                              (g x)))))))
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# ww 11#) of wild1 {
+                        GHC.Types.False -> p
+                        GHC.Types.True
+                        -> \ (x :: GHC.Base.String) ->
+                           GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x)) } }) -}
 6856c64be2adc0c46fee13a6360d3827
   $wpoly_go1 ::
     GHC.Prim.Word#
@@ -830,9 +821,9 @@ ac4affb1772fca4000aab1ef97c37365
           Data.HashMap.Base.HashMap [GHC.Types.Char] v #)
   {- Arity: 6, Strictness: <L,U><S,1*U><L,U><L,U><S,1*U><S,U>,
      Inline: [0] -}
-232b7d6043756b0162f19787874c9d19
+9b2b56e57885e27fef7dad9cf185f7f1
   type Env = Data.HashMap.Base.HashMap GHC.Base.String Common.Val
-ac4affb1772fca4000aab1ef97c37365
+b5eb1b9a874f72d45d66d66dc3ebd80b
   data Expr
     = NumExpr GHC.Types.Float
     | ConstExpr GHC.Base.String
@@ -841,13 +832,19 @@ ac4affb1772fca4000aab1ef97c37365
     | SubtractExpr Common.Expr Common.Expr
     | MultiplyExpr Common.Expr Common.Expr
     | DivideExpr Common.Expr Common.Expr
-5329ef54c7bebad3e3611f194a85724f
+    | AppExpr GHC.Base.String [Common.Expr]
+13f097a6ea259a02c10bb042aa389ece
   data Line = Stmt Common.Stmt | Expr Common.Expr
-7639a2314403c51b20d8aa4e43e17217
+218bba9a49c1dae1a3024ee2b3c71b99
   data Stmt
-    = SetStmt GHC.Base.String Common.Expr | SeqStmt [Common.Stmt]
-804f6571ba567a98857e81f04acb8c3e
-  data Val = NumVal GHC.Types.Float | ExnVal GHC.Base.String
+    = SetStmt GHC.Base.String Common.Expr
+    | SeqStmt [Common.Stmt]
+    | FuncStmt GHC.Base.String [GHC.Base.String] Common.Expr
+9b2b56e57885e27fef7dad9cf185f7f1
+  data Val
+    = NumVal GHC.Types.Float
+    | CloVal [GHC.Base.String] Common.Expr Common.Env
+    | ExnVal GHC.Base.String
 3832aa53649195f24011b82a11ef9ea7
   consts :: Data.HashMap.Base.HashMap GHC.Base.String GHC.Types.Float
   {- Unfolding: (case Common.$sunsafeInsert
@@ -871,6 +868,8 @@ d215560f0a2e866bf902ce14cc9ad71f
 7bd33ebf15e31bd12de4b5e8df83be70
   consts3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "pi"#) -}
+instance [safe] GHC.Classes.Eq [Common.Expr] = Common.$fEqExpr
+instance [safe] GHC.Classes.Eq [Common.Stmt] = Common.$fEqStmt
 instance [safe] GHC.Classes.Eq [Common.Val] = Common.$fEqVal
 instance [safe] GHC.Show.Show [Common.Expr] = Common.$fShowExpr
 instance [safe] GHC.Show.Show [Common.Line] = Common.$fShowLine

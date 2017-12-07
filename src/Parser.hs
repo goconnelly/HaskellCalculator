@@ -99,7 +99,7 @@ p_number =  try (signed (return ()) $ realToFrac <$> float)
 symbol :: String -> Parser String
 symbol s = space *> string s <* space
 
-p_funcStmt :: Parser FuncStmt
+p_funcStmt :: Parser Stmt
 p_funcStmt = undefined
 
 
