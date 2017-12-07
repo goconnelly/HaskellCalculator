@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-01 18:29:12.0256548 UTC
+2017-12-07 17:53:16.9607512 UTC
 
 interface main@main:Main 8002
-  interface hash: 4dc0de9ec4575583721297897d59692a
-  ABI hash: 7b13ecf51195bfda377ffb75e0ffa6ba
+  interface hash: 294b041fa9fc23a5e9b23081e30fe4b0
+  ABI hash: 5d73c7048b5de1c4342c50013b6d3109
   export-list hash: 7a0a7f9efb651d725d96df8f8a9f2703
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: d03f9c13daa759bf70867d2835fdcb70
@@ -90,9 +90,9 @@ import  -/  base-4.9.1.0:GHC.Show eca5834daba3b6a2bbbe64ab52056707
 import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
 import  -/  base-4.9.1.0:System.Environment 438c0b0bc0f94461b9c946d062a7eab9
 import  -/  base-4.9.1.0:System.IO 5daf3f384209c11d9566e3409af8ec5d
-import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Common 74ea2493033e881d111a7cc5a2556094
-import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Lib 471820588e1dcc88a8e04dc405956566
-import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Parser eb4aaad678ea88b8a3c42bf6279e4504
+import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Common 7c8577ad357058b243b7f3a9d016c5e0
+import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Lib ff26cd7f136441d54998ed6ef29c7b49
+import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Parser ce41d4c85e91634d823e3c2023a45686
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Base bc82d1baec8d9b794d947a6de22d7684
 import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Strict d885b1d9a1e033a14f7012d569830271
@@ -108,12 +108,12 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-441f4950205b4b5536c612c9ad632303
+b57a7b81806d649d25db7374021f15d8
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-8419cd5b8422332f36352b0378131dd9
+e451d16594172100ccada553f2edb3f7
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -137,7 +137,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                            ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
                            of {}
                         : ds2 xs -> Main.main2 xs ipv } } }) -}
-191591571084a6fe7b7a30bb7bd72b2e
+f22bb88563b7f1a25118d9399a24b5c3
   main2 ::
     [GHC.Base.String]
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -182,7 +182,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                                   (Data.HashMap.Base.Empty @ GHC.Base.String @ Common.Val)
                                   eta
                              : ipv ipv1 -> $wfail eta } } }) -}
-6cacc40e7ce5b2986d0df4800e4cad5f
+64bb7812e05225f57e58a9615a08dda9
   main3 ::
     Common.Env
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -199,13 +199,13 @@ a741f190ec378415baf02815b0c2b608
 a7d2d03e280f0db352f6d57b15529829
   main6 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "-p"#) -}
-c57659a1f7dc3411c730a70efa7f01a5
+5cf35b7bc0e4f10a06ef8f1a919909b2
   main7 ::
     Common.Env
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 2, Strictness: <L,U><S,U> -}
-d60a4fcb4f301adb556d6eaa9b63e633
+76d184cf6dbe800cb06a9edbbd680a13
   main8 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -218,14 +218,14 @@ d60a4fcb4f301adb556d6eaa9b63e633
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main5 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-a4ea2a0a48f5f3bbf0f203dfde97407a
+3f47d37d47467bf3ae9cec937fdde76e
   repl :: Common.Env -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main7
                   `cast`
                 (<Common.Env>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-2794bfaa79153a31a3767f9197416dc5
+9b45c008bfcae8c83d1be01032499fe6
   replDebug :: Common.Env -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)

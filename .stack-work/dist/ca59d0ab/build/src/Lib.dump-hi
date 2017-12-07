@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-01 18:40:03.7317523 UTC
+2017-12-07 17:53:15.3467512 UTC
 
 interface calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Lib 8002
-  interface hash: 74a7b984591f8348a9cff24e7cc0bdd6
-  ABI hash: 471820588e1dcc88a8e04dc405956566
-  export-list hash: 844b2628947182ba951bea3926f8e2d2
+  interface hash: 028515aca4236295edad06e925f5ade5
+  ABI hash: ff26cd7f136441d54998ed6ef29c7b49
+  export-list hash: 1b1c75e871e5b8c7194701793437937e
   orphan hash: 9c42d45dc296636cb91758bf7520fb7c
   flag hash: dc252629160a211b4eef177e4c1f5a39
   sig of: Nothing
@@ -20,10 +20,10 @@ exports:
   Parser.p_line
   Parser.runParser
   Common.Env
-  Common.Expr{Common.AddExpr Common.ConstExpr Common.DivideExpr Common.MultiplyExpr Common.NumExpr Common.SubtractExpr Common.VarExpr}
+  Common.Expr{Common.AddExpr Common.AppExpr Common.ConstExpr Common.DivideExpr Common.MultiplyExpr Common.NumExpr Common.SubtractExpr Common.VarExpr}
   Common.Line{Common.Expr Common.Stmt}
-  Common.Stmt{Common.SeqStmt Common.SetStmt}
-  Common.Val{Common.ExnVal Common.NumVal}
+  Common.Stmt{Common.FuncStmt Common.SeqStmt Common.SetStmt}
+  Common.Val{Common.CloVal Common.ExnVal Common.NumVal}
 module dependencies: Common Parser
 package dependencies: QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu
                       Win32-2.3.1.1@Win32-2.3.1.1 array-0.5.1.1@array-0.5.1.1
@@ -94,30 +94,33 @@ import  -/  base-4.9.1.0:GHC.Err 20faef8829fd13c027d0ee2213637534
 import  -/  base-4.9.1.0:GHC.Num 38b8aac8807c096c7f3ca3c1eff02939
 import  -/  base-4.9.1.0:GHC.Real b88ae4a48c079652623073a5bbf5c9b0
 import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
-import  -/  Common 74ea2493033e881d111a7cc5a2556094
-  exports: ffb5b4afd4db5415965f9f33be01d11b
-  AddExpr 345339e90c62b19dccd13bc18fe34fde
-  ConstExpr 46b0882fef71d232fc12e05c2ec12673
-  DivideExpr a672ad8bdccb309a6083d9bd28cf2255
-  Env 232b7d6043756b0162f19787874c9d19
-  ExnVal 412728b045518cf2384f4e34a9e4237d
-  Expr cbaf7fda286cd63dd651c77d856a5ded
-  Expr ac4affb1772fca4000aab1ef97c37365
-  Line 5329ef54c7bebad3e3611f194a85724f
-  MultiplyExpr c155bcb97dc609cb10e5b3b637896040
-  NumExpr 07d473a175b83ebb9ccd29858e346351
-  NumVal 13f0720d09c72a8fdf4f1ad7851efd8a
-  SeqStmt 4ccaba0e3a561ef359e39fc55154deb5
-  SetStmt b4a5c291eacbbe63a2f3da5a9a403704
-  Stmt 9d6806cf0b0e84c849c625c7777751ec
-  Stmt 7639a2314403c51b20d8aa4e43e17217
-  SubtractExpr 6af4491233e7c821c2a8d85c13ffb15b
-  Val 804f6571ba567a98857e81f04acb8c3e
-  VarExpr 3a65b158ee2ce4444c776436adc2ca18
+import  -/  Common 7c8577ad357058b243b7f3a9d016c5e0
+  exports: 02b86d8d7ebf5d2c7d9b0b6f8348dd36
+  AddExpr 85c5c4d9fcdfa1e8516157ea4498900b
+  AppExpr f70bb42e11480dfa406f9c9c9ee2578f
+  CloVal 58ee7d7f0f448d04f4932d675cfef645
+  ConstExpr 33072b562be487078c0b436421568e1c
+  DivideExpr dc46e13fea556379794ee66ced9f97b0
+  Env 9b2b56e57885e27fef7dad9cf185f7f1
+  ExnVal 86e76b21dbf1bb663961b834325695b6
+  Expr 5f23b1d9cf74804ca7ba6b327a33870e
+  Expr b5eb1b9a874f72d45d66d66dc3ebd80b
+  FuncStmt e11891fe4dcc5a21114e003203b11291
+  Line 13f097a6ea259a02c10bb042aa389ece
+  MultiplyExpr 29d7f96ab2ef493b9fcb3c9925fed11f
+  NumExpr 52f27286f5a541341fc0ffb1f310305e
+  NumVal ac71e72738e47cd0fd7294f4e6c5105c
+  SeqStmt 22a04eb350705ef9dc4d7a5170f95e14
+  SetStmt 27e823fbe503afc519268bedc381312a
+  Stmt ac7dd0c8180aa9e8b888de0fbb72ab05
+  Stmt 218bba9a49c1dae1a3024ee2b3c71b99
+  SubtractExpr 3d4cb0fab895e78e648628a5b1a9a25e
+  Val 9b2b56e57885e27fef7dad9cf185f7f1
+  VarExpr e81242b34d854bc84d027d7f530abb2b
   consts 3832aa53649195f24011b82a11ef9ea7
-import  -/  Parser eb4aaad678ea88b8a3c42bf6279e4504
-  exports: d73b525b141abdf0a6208298a7d27829
-  p_line cb308417a67cfc9fc0bc69fb94d0e8a0
+import  -/  Parser ce41d4c85e91634d823e3c2023a45686
+  exports: 600415cd8360953df807a97a0923e73c
+  p_line 9427bb968de3d81e83f38c26fc869adf
   runParser caae80e53a7e47ad5e41441ae5f6d3b5
 import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Base bc82d1baec8d9b794d947a6de22d7684
 import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Strict d885b1d9a1e033a14f7012d569830271
@@ -296,13 +299,13 @@ d9e201849196e7a5e1501cf48fbc25ef
     -> GHC.Base.Maybe v
   {- Arity: 4, HasNoCafRefs, Strictness: <L,U><S,1*U><L,U><S,1*U>,
      Inline: [0] -}
-d42f82d5f2755906255358edc02654b2
+f92628cf84df7aecc102044f3e241da6
   eval :: Common.Expr -> Common.Env -> Common.Val
   {- Arity: 2, Strictness: <S,1*U><L,U> -}
-34146a295a7f164432e668f8b516e34b
+e4206c054fd891fefb52d5c31a8b0d9f
   exec :: Common.Stmt -> Common.Env -> Common.Env
   {- Arity: 2, Strictness: <S,1*U><S,U> -}
-13b7878e29552b0896050ea2b54131c2
+ae9537e7800f6245e66c0aca48720b27
   run ::
     GHC.Base.String
     -> Common.Env
@@ -330,7 +333,7 @@ d42f82d5f2755906255358edc02654b2
                         @ GHC.Base.String
                         @ (Common.Env, GHC.Base.Maybe Common.Val)
                         (Lib.runLine line env) }) -}
-7a59aeb66f161622e6da370e3e9ce96a
+87ccc66121c986be5c58d9a8c8365715
   runLine ::
     Common.Line
     -> Common.Env -> (Common.Env, GHC.Base.Maybe Common.Val)
