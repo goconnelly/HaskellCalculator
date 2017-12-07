@@ -102,4 +102,8 @@ symbol s = space *> string s <* space
 p_funcStmt :: Parser Stmt
 p_funcStmt = undefined
 
+p_first :: Parser String
+p_first = undefined
 
+p_second :: String -> Parser [String]
+p_second = undefined
