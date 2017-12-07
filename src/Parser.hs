@@ -1,6 +1,9 @@
-module Parser ( runParser
-              , p_line
-              ) where
+module Parser
+  ( runParser
+  , p_line
+  , p_funcStmt
+  , p_appExpr
+  ) where
 
 -- Imports
 -- =======
