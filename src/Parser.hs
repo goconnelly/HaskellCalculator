@@ -107,3 +107,6 @@ p_first = undefined
 
 p_second :: String -> Parser [String]
 p_second = undefined
+
+p_appExpr :: Parser Expr
+p_appExpr = undefined
