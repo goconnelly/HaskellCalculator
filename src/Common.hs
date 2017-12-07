@@ -21,7 +21,7 @@ data Expr = NumExpr      Float
           | MultiplyExpr Expr Expr
           | DivideExpr   Expr Expr
 	      | AppExpr 	 String [Expr]
-deriving (Eq, Show)
+	deriving (Eq, Show)
 
 data Val = NumVal Float
 		 | CloVal [String] Expr Env
