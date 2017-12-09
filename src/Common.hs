@@ -1,4 +1,4 @@
-module Common where
+dule Common where
 
 import qualified Data.HashMap.Strict as H (HashMap, fromList)
 

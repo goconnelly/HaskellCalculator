@@ -103,10 +103,10 @@ p_funcStmt :: Parser Stmt
 p_funcStmt = undefined
 
 p_first :: Parser String
-p_first = undefined
+p_first = (oneOf['a'..'z']:_)		--I think this does it? Not quite positive 
 
 p_second :: String -> Parser [String]
 p_second = undefined
 
 p_appExpr :: Parser Expr
-p_appExpr = undefined
+p_appExpr = AppExpr <$> p_funcStmt		--also not positive on this
