@@ -100,13 +100,13 @@ symbol :: String -> Parser String
 symbol s = space *> string s <* space
 
 p_funcStmt :: Parser Stmt
-p_funcStmt = undefined
+p_funcStmt = FuncStmt <$> p_first <*> p_second <*> (symbol ":=" *> p_expr)
 
 p_first :: Parser String
-p_first = (oneOf['a'..'z']:_)		--I think this does it? Not quite positive 
+p_first = (:) <$> oneOf ['a'..'z'] <*> many (oneOf (['a'..'z']++['A'..'Z']++['0'..'9']++['_']))
 
-p_second :: String -> Parser [String]
-p_second = undefined
+p_second :: Parser [String]
+p_second = symbol "(" *> sepBy p_var (symbol ",") <* symbol ")"
 
 p_appExpr :: Parser Expr
-p_appExpr = AppExpr <$> p_funcStmt		--also not positive on this
+p_appExpr = AppExpr <$> p_first <*>  (symbol "(" *> sepBy p_expr (symbol ",") <* symbol ")")
