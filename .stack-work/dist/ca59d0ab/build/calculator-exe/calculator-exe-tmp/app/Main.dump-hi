@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-07 17:53:16.9607512 UTC
+2017-12-12 17:03:04.575131 UTC
 
 interface main@main:Main 8002
-  interface hash: 294b041fa9fc23a5e9b23081e30fe4b0
+  interface hash: c7fd5a49e5cb822d7aa3bec2b1ae7807
   ABI hash: 5d73c7048b5de1c4342c50013b6d3109
   export-list hash: 7a0a7f9efb651d725d96df8f8a9f2703
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -91,8 +91,8 @@ import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
 import  -/  base-4.9.1.0:System.Environment 438c0b0bc0f94461b9c946d062a7eab9
 import  -/  base-4.9.1.0:System.IO 5daf3f384209c11d9566e3409af8ec5d
 import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Common 7c8577ad357058b243b7f3a9d016c5e0
-import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Lib ff26cd7f136441d54998ed6ef29c7b49
-import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Parser ce41d4c85e91634d823e3c2023a45686
+import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Lib ec56e266faf54bbaac6b044936231dc5
+import  -/  calculator-0.1.0.0@calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Parser ebcc5beee2ee0a84fd16e24c5182e468
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Base bc82d1baec8d9b794d947a6de22d7684
 import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Strict d885b1d9a1e033a14f7012d569830271

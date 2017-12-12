@@ -47,6 +47,7 @@ exec :: Stmt -> Env -> Env
 exec (SetStmt var e) env = H.insert var (eval e env) env
 exec (SeqStmt [first, second]) env = exec second (exec first env)
 exec (SeqStmt (first:rest)) env = exec (SeqStmt rest) (exec first env)
+exec (FuncStmt name args expr) env = H.insert name (CloVal args expr env) env
 
 -- Lifting Functions
 -- -----------------
@@ -61,6 +62,10 @@ liftNumOp f (ExnVal s) _ = ExnVal "Cannot lift."
 liftNumOp f x (ExnVal s) = ExnVal "Cannot lift."
 liftNumOp f (NumVal x) (NumVal y) = NumVal (f x y)
 liftNumOp _ _ _  = undefined
+
+liftNumFunc :: (Float -> Float) -> Val -> Val
+liftNumFunc f (NumVal num) = NumVal (f num)
+liftNumFunc f _ = ExnVal ("Cannot Lift")
 
 -- Evaluator
 -- ---------
@@ -91,6 +96,18 @@ eval (MultiplyExpr num1 num2) env = liftNumOp (*) (eval num1 env) (eval num2 env
 eval (DivideExpr num1 num2) env = case eval num2 env of 
 	(NumVal 0) -> ExnVal ("Division by zero.")
 	(NumVal x) -> liftNumOp (/) (eval num1 env) (eval (NumExpr x) env)
--- remember to use liftNumOp here
+eval (AppExpr "sin" [(ConstExpr "pi")]) env = liftNumFunc sin (NumVal pi)
+eval (AppExpr "sin" [(NumExpr arg)]) env = liftNumFunc sin (NumVal arg)
+eval (AppExpr "cos" [(ConstExpr "pi")]) env = liftNumFunc cos (NumVal pi)
+eval (AppExpr "cos" [(NumExpr arg)]) env = liftNumFunc cos (NumVal arg)
+eval (AppExpr name exprs) env = case (H.lookup name env) of
+	Nothing -> ExnVal ("Function name "++name++" is not defined.")
+	Just (CloVal args ex env2) -> eval ex (funcEval args exprs env2)
+	_ -> ExnVal ("Can only apply CloVals.")
+	
 
-eval (AppExpr string [exp]) env = undefined
+--Helper function to add the arguments to the local environment
+funcEval :: [String] -> [Expr] -> Env -> Env
+funcEval (x:xs) (expr:exprs) env = funcEval xs exprs (exec (SetStmt x expr) env)
+funcEval [x] [expr] env = exec (SetStmt x expr) env
+funcEval _ _ env = env

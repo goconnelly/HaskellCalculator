@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-07 17:53:15.3467512 UTC
+2017-12-12 19:02:48.6699463 UTC
 
 interface calculator-0.1.0.0-9ShsRLERtFy4Roy8EMGn4g:Lib 8002
-  interface hash: 028515aca4236295edad06e925f5ade5
-  ABI hash: ff26cd7f136441d54998ed6ef29c7b49
+  interface hash: b801083c6ab8ebc58ee8aca6506c7bcd
+  ABI hash: ec56e266faf54bbaac6b044936231dc5
   export-list hash: 1b1c75e871e5b8c7194701793437937e
   orphan hash: 9c42d45dc296636cb91758bf7520fb7c
   flag hash: dc252629160a211b4eef177e4c1f5a39
@@ -91,6 +91,7 @@ import  -/  base-4.9.1.0:Data.Either 186ef9adf6b47e24f39efe9b2e18e352
 import  -/  base-4.9.1.0:Data.Maybe ecf0c6f81372d9b58b142d5e758ea51b
 import  -/  base-4.9.1.0:GHC.Base 4caea1123ecf4b46e27cbccd6d279377
 import  -/  base-4.9.1.0:GHC.Err 20faef8829fd13c027d0ee2213637534
+import  -/  base-4.9.1.0:GHC.Float b620368aab866c2bb9d3a0a459566b84
 import  -/  base-4.9.1.0:GHC.Num 38b8aac8807c096c7f3ca3c1eff02939
 import  -/  base-4.9.1.0:GHC.Real b88ae4a48c079652623073a5bbf5c9b0
 import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
@@ -118,10 +119,10 @@ import  -/  Common 7c8577ad357058b243b7f3a9d016c5e0
   Val 9b2b56e57885e27fef7dad9cf185f7f1
   VarExpr e81242b34d854bc84d027d7f530abb2b
   consts 3832aa53649195f24011b82a11ef9ea7
-import  -/  Parser ce41d4c85e91634d823e3c2023a45686
+import  -/  Parser ebcc5beee2ee0a84fd16e24c5182e468
   exports: 600415cd8360953df807a97a0923e73c
   p_line 9427bb968de3d81e83f38c26fc869adf
-  runParser caae80e53a7e47ad5e41441ae5f6d3b5
+  runParser e5e4dcd60ef00eb6ea2aeb7c7fa9226a
 import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Base bc82d1baec8d9b794d947a6de22d7684
 import  -/  unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Strict d885b1d9a1e033a14f7012d569830271
 a89fb27c72d0ebdd14fab0aa169f0b51
@@ -305,7 +306,7 @@ f92628cf84df7aecc102044f3e241da6
 e4206c054fd891fefb52d5c31a8b0d9f
   exec :: Common.Stmt -> Common.Env -> Common.Env
   {- Arity: 2, Strictness: <S,1*U><S,U> -}
-ae9537e7800f6245e66c0aca48720b27
+2911a0100d06b3532ccc960e746799d6
   run ::
     GHC.Base.String
     -> Common.Env
