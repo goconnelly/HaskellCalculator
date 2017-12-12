@@ -96,17 +96,22 @@ eval (MultiplyExpr num1 num2) env = liftNumOp (*) (eval num1 env) (eval num2 env
 eval (DivideExpr num1 num2) env = case eval num2 env of 
 	(NumVal 0) -> ExnVal ("Division by zero.")
 	(NumVal x) -> liftNumOp (/) (eval num1 env) (eval (NumExpr x) env)
+
+-- ### Function Application Expressions
+--Special Cases
 eval (AppExpr "sin" [(ConstExpr "pi")]) env = liftNumFunc sin (NumVal pi)
 eval (AppExpr "sin" [(NumExpr arg)]) env = liftNumFunc sin (NumVal arg)
 eval (AppExpr "cos" [(ConstExpr "pi")]) env = liftNumFunc cos (NumVal pi)
 eval (AppExpr "cos" [(NumExpr arg)]) env = liftNumFunc cos (NumVal arg)
+
+--General Case
 eval (AppExpr name exprs) env = case (H.lookup name env) of
 	Nothing -> ExnVal ("Function name "++name++" is not defined.")
 	Just (CloVal args ex env2) -> eval ex (funcEval args exprs env2)
 	_ -> ExnVal ("Can only apply CloVals.")
 	
 
---Helper function to add the arguments to the local environment
+--Helper function to add the arguments to the function environment
 funcEval :: [String] -> [Expr] -> Env -> Env
 funcEval (x:xs) (expr:exprs) env = funcEval xs exprs (exec (SetStmt x expr) env)
 funcEval [x] [expr] env = exec (SetStmt x expr) env
